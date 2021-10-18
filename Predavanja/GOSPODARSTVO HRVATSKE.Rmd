@@ -408,10 +408,97 @@ layout: true
 ---
 
 
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
+
+dta %>% dplyr::filter(var %in%  c("Inozemni dug  (u mil. EUR, na kraju razdoblja) c", "Inozemni dug (u % BDP-a)")) %>%
+ggplot(., aes(Godina, Vrijednost), color=var) +
+  geom_line(color="red") +
+  geom_point() +
+  theme_bw() +
+  facet_wrap(~var, scales = "free") +
+  scale_y_continuous(labels = comma_format(big.mark = ".",
+                                           decimal.mark = ",")) +
+  labs(
+    title = "Inozemni dug",
+    subtitle = "Godine: 2000-2020",
+    caption  = "Izvor: HNB; izrada autora")
+    
+```
+
+---
+layout: true
+# Odnosi sa inozemstvom
+---
 
 
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=7}
+
+dta %>% dplyr::filter(var %in%  c("Prosječni devizni tečaj (HRK : 1 EUR)", "Prosječni devizni tečaj (HRK : 1 USD)")) %>%
+ggplot(., aes(Godina, Vrijednost), color=var) +
+  geom_line(color="red") +
+  geom_point() +
+  theme_bw() +
+  facet_wrap(~var, scales = "free") +
+  scale_y_continuous(labels = comma_format(big.mark = ".",
+                                           decimal.mark = ",")) +
+  labs(
+    title ="Devizni tečaj",
+    subtitle = "Godine: 2000-2020",
+    caption  = "Izvor: HNB; izrada autora")
+    
+```
+
+---
+layout: true
+# Fiskalna politika
+---
+
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=9}
+
+dta %>% dplyr::filter(var %in%  c("Neto pozajmljivanje (+)/zaduživanje (-) konsolidirane opće države (u mil. HRK) e", "Neto pozajmljivanje (+)/zaduživanje (-) konsolidirane opće države (u % BDP-a) e", "Dug opće države (u % BDP-a) e" )) %>%
+  mutate(var = case_when
+         (var == "Neto pozajmljivanje (+)/zaduživanje (-) konsolidirane opće države (u mil. HRK) e" ~ "Neto pozajmljivanje države mil. HRK",
+         var == "Neto pozajmljivanje (+)/zaduživanje (-) konsolidirane opće države (u % BDP-a) e" ~ "Neto pozajmljivanje države u % BDP-a",
+         var == "Dug opće države (u % BDP-a) e" ~ "Dug opće države (u % BDP-a)")) %>%
+ggplot(., aes(Godina, Vrijednost), color=var) +
+  geom_line(color="red") +
+  geom_point() +
+  theme_bw() +
+  facet_wrap(~var, scales = "free") +
+  scale_y_continuous(labels = comma_format(big.mark = ".",
+                                           decimal.mark = ",")) +
+  labs(
+    title = "Zaduženost države",
+    subtitle = "Godine: 2000-2020",
+    caption  = "Izvor: HNB; izrada autora")
+    
+```
 
 
+---
+layout: true
+# Tržište rada
+---
+
+
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=9}
+
+dta %>% dplyr::filter(var %in%  c("Stopa nezaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f", "Stopa zaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f")) %>%
+  mutate(var = case_when
+         (var == "Stopa zaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f" ~ "Stopa zaposlenosti")) %>%
+ggplot(., aes(Godina, Vrijednost), color=var) +
+  geom_line(color="red") +
+  geom_point() +
+  theme_bw() +
+  facet_wrap(~var, scales = "free") +
+  scale_y_continuous(labels = comma_format(big.mark = ".",
+                                           decimal.mark = ",")) +
+  labs(
+    title = "Tržište rada",
+    subtitle = "Godine: 2000-2020",
+    caption  = "Izvor: HNB; izrada autora")
+
+```    
 
 
 ---
