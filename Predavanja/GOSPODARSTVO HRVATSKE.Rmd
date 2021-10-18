@@ -175,9 +175,12 @@ layout: true
 
 - Gospodarstvo Hrvatske (obuhvat područja)
 <br>
+<br>
 - Najvažniji pokazatelji 
 <br>
+<br>
 - Izabrane teme
+<br>
 <br>
 - Kako i gdje pratiti područje
 
@@ -186,26 +189,26 @@ layout: true
 layout: false
 class: middle, inverse
 
-# GOSPODARSTVO HRVATSKE
+# OPĆENITO
 ---
 layout: true
-# Općenito o području
+# O području
 ---
 <br>
 <br>
-- kolegij [Gospodarstvo Hrvatske](https://www.efzg.unizg.hr/gospodarstvo-hrvatske-34141/34141) (postoji i na drugim fakultetima: [1](https://www.efst.unist.hr/dokumenti/izvedbeni/eua107.pdf), [2](https://www.vup.hr/_Data/Files/140929194634431.pdf)], [3](https://e-ucenje.unipu.hr/course/info.php?id=2303),[4](https://www.veleri.hr/?q=node/109), [5](https://www.veleknin.hr/upload/stranice/2021/02/2021-02-28/206/gospodarstvo-hrvatske.pdf), [6](http://old-nastava.foi.hr/public/course?study=2825&course=37295&academicYear=2013%2F2014#informacije) i dr.)
+- kolegij [Gospodarstvo Hrvatske](https://www.efzg.unizg.hr/gospodarstvo-hrvatske-34141/34141) (postoji i na drugim fakultetima: [1](https://www.efst.unist.hr/dokumenti/izvedbeni/eua107.pdf), [2](https://www.vup.hr/_Data/Files/140929194634431.pdf), [3](https://e-ucenje.unipu.hr/course/info.php?id=2303),[4](https://www.veleri.hr/?q=node/109), [5](https://www.veleknin.hr/upload/stranice/2021/02/2021-02-28/206/gospodarstvo-hrvatske.pdf), [6](http://old-nastava.foi.hr/public/course?study=2825&course=37295&academicYear=2013%2F2014#informacije) i dr.)
 <br>
 <br>
 - knjiga [Gospodarstvo Hrvatske](https://knjizaraum.hr/knjiga/gospodarstvo-hrvatske-2/)
 <br>
 <br>
-- skup relevantnih ekonomskih tema/područja o hrvatskoj ekonomiji
+- skup relevantnih tema (istraživačkih područja) o hrvatskoj ekonomiji
 <br>
 <br>
 - dominantno makroekonomski pristup
 <br>
 <br>
-- empirijski pristup
+- empirijski pristup 
 <br>
 <br>
 - tematika aktualna u medijima, konferencijama, časopisima, javnim raspravama 
@@ -216,6 +219,8 @@ layout: true
 # Pregled tematike 
 ---
 <br>
+<br>
+<br>
 - makroekonomske varijable hrvatskog gospodarstva (rast, zapošljavanje, inflacija, vanjska razmjena)
 <br>
 - dugoročna gibanja i komparativna dinamika hrvatskog gospodarstva (ekonomski rast)
@@ -224,7 +229,7 @@ layout: true
 <br>
 - monetarna politika
 <br>
--izvozne performanse i uvoz kapitala (FDI)
+- izvozne performanse i uvoz kapitala (FDI)
 <br>
 - regionalni razvitak
 <br>
@@ -243,7 +248,7 @@ layout: true
 layout: false
 class: middle, inverse
 
-# NAJVAŽNIJI POKAZATELJI
+# NAJVAŽNIJI POKAZATELJI HRVATSKOG GOSPODARSTVA
 ---
 layout: true
 # BDP (Bruto društveni proizvod)
@@ -279,6 +284,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # BDP (Bruto društveni proizvod)
 ---
+<br>
+<br>
 
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
@@ -290,7 +297,7 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
   scale_y_continuous(labels = comma_format(big.mark = ".",
                                            decimal.mark = ",")) +
   labs(
-    title = "Bruto domaći proizvod (BDP) u Hrvatskoj u eurima",
+    title = "Bruto domaći proizvod (BDP) u Hrvatskoj",
     subtitle = "Godine: 2000-2020; u mlrd. EUR",
     caption  = "Izvor: HNB; izrada autora")
 ```
@@ -299,7 +306,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # BDP po stanovniku
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
 dta %>% dplyr::filter(var %in%  c("BDP po stanovniku (u EUR)")) %>%
@@ -319,7 +327,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # BDP po stanovniku
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
 dta %>% dplyr::filter(var %in%  c("BDP - realna godišnja stopa promjene (u %)")) %>%
@@ -341,13 +350,13 @@ layout: true
 # Struktura BDP po sektorima
 ---
 
-```{r}
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=7, fig.width=8}
 options(scipen = 999, digits = 2)
 dta2 <- read_excel("../Podatci/HRstruktura.xlsx") 
 ```
 
 
-```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=7, fig.width=8}
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=6, fig.width=8}
 dta2 %>%
   select("Naziv","2019") %>%
   rename(Udio = "2019", Djelatnost = "Naziv") %>%
@@ -357,7 +366,7 @@ dta2 %>%
   coord_flip() +
   theme_bw() +
   labs(
-    title = "Struktura hrvatskog gospodarstva (% BDP) ",
+    title = "Struktura hrvatskog gospodarstva (% BDP) po sektorima",
     subtitle = "Godina: 2019.",
     caption  = "Izvor: DZS; izrada autora") +
   xlab("")
@@ -369,7 +378,7 @@ layout: true
 # Struktura BDP po djelatnostima
 ---
 
-```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=7, fig.width=8}
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=8}
 dta2 %>%
   select("Naziv","2019", "Kratica") %>%
   rename(Udio = "2019", Djelatnost = "Naziv", nacerev21 = "Kratica") %>%
@@ -395,7 +404,8 @@ dta2 %>%
 layout: true
 # Odnosi sa inozemstvom
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
 dta %>% dplyr::filter(var %in%  c("Tekući račun platne bilance (u mil. EUR) c")) %>%
@@ -416,7 +426,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Odnosi sa inozemstvom
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
 dta %>% dplyr::filter(var %in%  c("Tekući račun platne bilance (u % BDP-a)")) %>%
@@ -427,7 +438,7 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
   scale_y_continuous(labels = comma_format(big.mark = ".",
                                            decimal.mark = ",")) +
   labs(
-    title = "Tekući račun platne bilance u % BDP-a",
+    title = "Tekući račun platne bilance",
     subtitle = "Godine: 2000-2020; % BDP",
     caption  = "Izvor: HNB; izrada autora")
     
@@ -437,7 +448,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Odnosi sa inozemstvom
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
 dta %>% dplyr::filter(var %in%  c("Izvoz robe i usluga (u % BDP-a)", "Uvoz robe i usluga (u % BDP-a)")) %>%
@@ -449,8 +461,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
   scale_y_continuous(labels = comma_format(big.mark = ".",
                                            decimal.mark = ",")) +
   labs(
-    title = "Uvoz i izvoz u % BDP-a",
-    subtitle = "Godine: 2000-2020; % BDP",
+    title = "Uvoz i izvoz",
+    subtitle = "Godine: 2000-2020",
     caption  = "Izvor: HNB; izrada autora")
     
 ```
@@ -459,8 +471,9 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Odnosi sa inozemstvom
 ---
-
-```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
+<br>
+<br>
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=7}
 
 dta %>% dplyr::filter(var %in%  c("Inozemni dug  (u mil. EUR, na kraju razdoblja) c", "Inozemni dug (u % BDP-a)")) %>%
 ggplot(., aes(Godina, Vrijednost), color=var) +
@@ -481,7 +494,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Odnosi sa inozemstvom
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=7}
 
 dta %>% dplyr::filter(var %in%  c("Prosječni devizni tečaj (HRK : 1 EUR)", "Prosječni devizni tečaj (HRK : 1 USD)")) %>%
@@ -503,7 +517,8 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Fiskalna politika
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=9}
 
 dta %>% dplyr::filter(var %in%  c("Neto pozajmljivanje (+)/zaduživanje (-) konsolidirane opće države (u mil. HRK) e", "Neto pozajmljivanje (+)/zaduživanje (-) konsolidirane opće države (u % BDP-a) e", "Dug opće države (u % BDP-a) e" )) %>%
@@ -529,13 +544,15 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Tržište rada
 ---
-
+<br>
+<br>
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=9}
 
 dta %>% dplyr::filter(var %in%  c("Stopa nezaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f", "Stopa zaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f")) %>%
   mutate(var = case_when
-         (var == "Stopa zaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f" ~ "Stopa zaposlenosti")) %>%
-ggplot(., aes(Godina, Vrijednost), color=var) +
+         (var == "Stopa zaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f" ~ "Stopa zaposlenosti",
+         var == "Stopa nezaposlenosti (prema definiciji ILO-a, stanovništvo starije od 15 god.) f" ~ "Stopa nezaposlenosti")) %>%
+ggplot(., aes(Godina, Vrijednost)) +
   geom_line(color="red") +
   geom_point() +
   theme_bw() +
