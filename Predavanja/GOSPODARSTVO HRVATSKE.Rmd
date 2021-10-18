@@ -339,6 +339,17 @@ layout: true
 # Struktura BDP po sektorima
 ---
 
+```{r}
+options(scipen = 999, digits = 2)
+dta2 <- read_excel("../Podatci/HRstruktura.xlsx") %>% 
+  gather(., "Godina", "Vrijednost", -var) %>%
+  mutate(Godina = as.Date(Godina,"%Y"))
+```
+
+
+```{r}
+dta2
+```
 
 
 ---
