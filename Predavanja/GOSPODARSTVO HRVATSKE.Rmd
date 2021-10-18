@@ -173,7 +173,7 @@ layout: true
 <br>
 <br>
 
-- Gospodarstvo Hrvatske (obuhvat područja)
+- Obuhvat područja
 <br>
 <br>
 - Najvažniji pokazatelji 
@@ -573,9 +573,10 @@ class: middle, inverse
 # IZABRANE TEME
 ---
 layout: true
-# Utjecaj COVID-19 pandemije na gospodarstvo
+# Utjecaj COVID-19 pandemije
 ---
-
+<br>
+<br>
 
 .footer[[*] [Ekonomska politika Hrvatske u 2021.](http://www.hde.hr/ekonomskapolitikahrvatske/publikacija/Ekonomska_politika_hrvatske_u_2021.pdf)]
 
@@ -583,14 +584,16 @@ layout: true
 layout: true
 # Dugoročni rast u Hrvatskoj
 ---
-
+<br>
+<br>
 .footer[[*] [Činjenice koje treba objasniti](https://www.hub.hr/sites/default/files/inline-files/rh_dugi_rok_cinjenice_koje_treba_objasniti_final.pdf); [Dugoročne serije BDP-a Hrvatske](https://hrcak.srce.hr/index.php?show=clanak&id_clanak_jezik=185359)]
 
 ---
 layout: true
 # Konvergencija dohotka
 ---
-
+<br>
+<br>
 
 .footer[[*] [PROGRAM KONVERGENCIJE REPUBLIKE HRVATSKE ZA RAZDOBLJE 2022–2024](https://ec.europa.eu/info/sites/default/files/2021-croatia-convergence-programme_hr.pdf)]
 
@@ -599,6 +602,10 @@ layout: true
 layout: true
 # Digitalizacija
 ---
+<br>
+<br>
+
+
 
 .footer[[*] [DIGITALIZACIJA U TRGOVINI](http://library.fes.de/pdf-files/bueros/kroatien/16159.pdf)]
 
@@ -607,6 +614,14 @@ layout: true
 layout: true
 # Institucije i politička ekonomije
 ---
+
+---
+layout: false
+class: middle, inverse
+
+# GDJE PRATITI GOSPODARSTVO HRVATSKE?
+---
+
 
 ---
 
