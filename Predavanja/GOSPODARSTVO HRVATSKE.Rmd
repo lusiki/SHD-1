@@ -341,14 +341,26 @@ layout: true
 
 ```{r}
 options(scipen = 999, digits = 2)
-dta2 <- read_excel("../Podatci/HRstruktura.xlsx") %>% 
-  gather(., "Godina", "Vrijednost", -var) %>%
-  mutate(Godina = as.Date(Godina,"%Y"))
+dta2 <- read_excel("../Podatci/HRstruktura.xlsx") 
 ```
 
 
-```{r}
-dta2
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=7, fig.width=8}
+dta2 %>%
+  select("Naziv","2019") %>%
+  rename(Udio = "2019", Djelatnost = "Naziv") %>%
+  arrange(desc(Udio)) %>%
+  ggplot(.,aes(reorder(Djelatnost,Udio), Udio)) +
+    geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_bw() +
+  labs(
+    title = "Struktura hrvatskog gospodarstva (% BDP) ",
+    subtitle = "Godina: 2019.",
+    caption  = "Izvor: DZS; izrada autora") +
+  xlab("")
+  
+  
 ```
 
 
