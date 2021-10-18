@@ -1,7 +1,7 @@
 ---
 title: "GOSPODARSTVO HRVATSKE"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
-subtitle: "SOCIOLOGIJA HRVATSKOG DRUŠTVA"
+subtitle: "Sociologija hrvatskog društva"
 author: "Luka Sikic, PhD"
 date: "Fakultet hrvatskih studija | [Github PS](https://github.com/lusiki/SHD-1)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
@@ -168,15 +168,17 @@ layout: true
 # PREGLED PREDAVANJA
 ---
 
-## Ciljevi
 <br>
 <br>
 <br>
 <br>
 
-- Gospodarstvo hrvatske
+- Gospodarstvo Hrvatske (obuhvat područja)
+<br>
 - Najvažniji pokazatelji 
+<br>
 - Izabrane teme
+<br>
 - Kako i gdje pratiti područje
 
 
@@ -359,10 +361,35 @@ dta2 %>%
     subtitle = "Godina: 2019.",
     caption  = "Izvor: DZS; izrada autora") +
   xlab("")
-  
-  
+
 ```
 
+---
+layout: true
+# Struktura BDP po djelatnostima
+---
+
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=7, fig.width=8}
+dta2 %>%
+  select("Naziv","2019", "Kratica") %>%
+  rename(Udio = "2019", Djelatnost = "Naziv", nacerev21 = "Kratica") %>%
+  mutate(djelatnosti = case_when(nacerev21 == "A" ~ "primarne",
+                                 nacerev21 %in% c("B", "C", "D", "E", "F") ~ "sekundarne",
+                                 nacerev21 %in% c("G", "H", "I", "J") ~ "tecijarne",
+                                 nacerev21 %in% c("K", "L", "M", "N") ~ "kvartarne",
+                                 nacerev21 %in% c("O", "P", "Q", "R", "S", "T") ~ "kvintarne")) %>%
+  mutate(djelatnosti = factor(djelatnosti, levels = unique(djelatnosti))) %>%
+  ungroup() %>%
+  ggplot(.,aes(reorder(djelatnosti,order(Udio, decreasing = TRUE)), Udio)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  labs(
+    title = "Struktura hrvatskog gospodarstva (% BDP) po djelatnostima",
+    subtitle = "Godina: 2019.",
+    caption  = "Izvor: DZS; izrada autora") +
+  xlab("")
+
+```
 
 ---
 layout: true
