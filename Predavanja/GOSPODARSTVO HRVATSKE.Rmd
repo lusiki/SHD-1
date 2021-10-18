@@ -177,7 +177,7 @@ layout: true
 - Gospodarstvo hrvatske
 - Najvažniji pokazatelji 
 - Izabrane teme
-- Najvažnije publikacije
+- Kako i gdje pratiti područje
 
 
 ---
@@ -241,7 +241,7 @@ layout: true
 layout: false
 class: middle, inverse
 
-# Najvažniji pokazatelji
+# NAJVAŽNIJI POKAZATELJI
 ---
 layout: true
 # BDP (Bruto društveni proizvod)
@@ -255,8 +255,6 @@ options(scipen = 999, digits = 2)
 dta <- read_excel("../Podatci/HRindikatori.xlsx") %>% 
   gather(., "Godina", "Vrijednost", -var) %>%
   mutate(Godina = as.Date(Godina,"%Y"))
-
- unique(dta$var)
 ```
 
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
@@ -294,7 +292,6 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
     subtitle = "Godine: 2000-2020; u mlrd. EUR",
     caption  = "Izvor: HNB; izrada autora")
 ```
-
 
 ---
 layout: true
@@ -336,6 +333,14 @@ ggplot(., aes(Godina, Vrijednost)) +
     caption  = "Izvor: HNB; izrada autora")
 ```
 
+
+---
+layout: true
+# Struktura BDP po sektorima
+---
+
+
+
 ---
 layout: true
 # Odnosi sa inozemstvom
@@ -357,7 +362,6 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
     
 ```
 
-
 ---
 layout: true
 # Odnosi sa inozemstvom
@@ -378,7 +382,6 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
     caption  = "Izvor: HNB; izrada autora")
     
 ```
-
 
 ---
 layout: true
@@ -407,7 +410,6 @@ layout: true
 # Odnosi sa inozemstvom
 ---
 
-
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=6}
 
 dta %>% dplyr::filter(var %in%  c("Inozemni dug  (u mil. EUR, na kraju razdoblja) c", "Inozemni dug (u % BDP-a)")) %>%
@@ -429,7 +431,6 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 layout: true
 # Odnosi sa inozemstvom
 ---
-
 
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=7}
 
@@ -474,12 +475,10 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
     
 ```
 
-
 ---
 layout: true
 # Tržište rada
 ---
-
 
 ```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=9}
 
@@ -500,6 +499,47 @@ ggplot(., aes(Godina, Vrijednost), color=var) +
 
 ```    
 
+---
+layout: false
+class: middle, inverse
+
+# IZABRANE TEME
+---
+layout: true
+# Utjecaj COVID-19 pandemije na gospodarstvo
+---
+
+
+.footer[[*] [Ekonomska politika Hrvatske u 2021.](http://www.hde.hr/ekonomskapolitikahrvatske/publikacija/Ekonomska_politika_hrvatske_u_2021.pdf)]
+
+---
+layout: true
+# Dugoročni rast u Hrvatskoj
+---
+
+.footer[[*] [Činjenice koje treba objasniti](https://www.hub.hr/sites/default/files/inline-files/rh_dugi_rok_cinjenice_koje_treba_objasniti_final.pdf); [Dugoročne serije BDP-a Hrvatske](https://hrcak.srce.hr/index.php?show=clanak&id_clanak_jezik=185359)]
+
+---
+layout: true
+# Konvergencija dohotka
+---
+
+
+.footer[[*] [PROGRAM KONVERGENCIJE REPUBLIKE HRVATSKE ZA RAZDOBLJE 2022–2024](https://ec.europa.eu/info/sites/default/files/2021-croatia-convergence-programme_hr.pdf)]
+
+
+---
+layout: true
+# Digitalizacija
+---
+
+.footer[[*] [DIGITALIZACIJA U TRGOVINI](http://library.fes.de/pdf-files/bueros/kroatien/16159.pdf)]
+
+
+---
+layout: true
+# Institucije i politička ekonomije
+---
 
 ---
 
@@ -507,7 +547,7 @@ layout:false
 class: middle, inverse
 # Hvala na pozornosti! 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
-(Sljedeće predavanje: Dodatni koncepti R)
+(Sljedeće predavanje: Ekonomska struktura hrvatskog gospodarstva)
 
 
 
