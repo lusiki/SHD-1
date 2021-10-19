@@ -651,6 +651,8 @@ layout: true
 <br>
 <br>
 <br>
+<br>
+<br>
 .footer[[*] [Činjenice koje treba objasniti](https://www.hub.hr/sites/default/files/inline-files/rh_dugi_rok_cinjenice_koje_treba_objasniti_final.pdf); [Dugoročne serije BDP-a Hrvatske](https://hrcak.srce.hr/index.php?show=clanak&id_clanak_jezik=185359)]
 
 ---
@@ -659,8 +661,106 @@ layout: true
 ---
 <br>
 <br>
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=5, fig.width=7}
+library(countrycode)
+library(eurostat)
+library(REAT) 
+library(tidyr)
 
-.footer[[*] [PROGRAM KONVERGENCIJE REPUBLIKE HRVATSKE ZA RAZDOBLJE 2022–2024](https://ec.europa.eu/info/sites/default/files/2021-croatia-convergence-programme_hr.pdf)]
+maddison %>%
+  filter(country %in% eurostat::eu_countries$name) %>%
+  filter(year >= 1952) %>%
+  select(country,year,rgdpnapc) %>%
+  spread(., year, rgdpnapc) -> GDPdta
+
+GDPdtaCRO <- GDPdta %>%
+  filter(country == "Croatia") %>%
+  gather(., year, value,-country) %>%
+  mutate(valueLOG = log(value))
+
+
+betaconv_ols <- betaconv.ols(GDPdta$"1952",
+              1952,
+              GDPdta$"2016",
+              2016,
+              conditions = NULL, 
+              beta.plot = FALSE,
+              beta.plotLine = TRUE, 
+              beta.plotLineCol = "red", 
+              beta.plotX = "Početni dohodak u 1952", 
+              beta.plotY = "Stopa rasta (1952.-2016.)", 
+              beta.plotTitle = "Konvergencija dohotka u EU", 
+              beta.bgrid = TRUE, 
+              beta.bgridType = "solid",
+          #    print.results = TRUE
+              )
+   
+ggplot(betaconv_ols$regdata, aes(ln_initial, ln_growth)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw()+
+  labs(
+       title = "Konvergencija dohotka u EU",
+    subtitle = "Godine: 1952-2016",
+    caption  = "Izvor: Maddison database; izrada autora") +
+  ylab("Stopa rasta BDP") +
+  xlab("Dohodak u početnoj godini") + 
+  annotate(
+    geom = "text", x = 8.20, y = 0.025, label = "Hrvatska", hjust = "right")
+
+```
+
+---
+layout: true
+# Konvergencija dohotka
+---
+
+```{r echo=FALSE,warning=FALSE,message=FALSE, fig.height=4, fig.width=7}
+
+
+GDPdtaCRO <- GDPdta %>%
+  filter(country == "Slovenia") %>%
+  gather(., year, value,-country) %>%
+  mutate(valueLOG = log(value))
+
+
+betaconv_ols_kapitalizam <- betaconv.ols(GDPdta$"1995",
+              1995,
+              GDPdta$"2016",
+              2016,
+              conditions = NULL, 
+              beta.plot = FALSE,
+              beta.plotLine = TRUE, 
+              beta.plotLineCol = "red", 
+              beta.plotX = "Početni dohodak u 1952", 
+              beta.plotY = "Stopa rasta (1952.-2016.)", 
+              beta.plotTitle = "Konvergencija dohotka u EU", 
+              beta.bgrid = TRUE, 
+              beta.bgridType = "solid",
+          #    print.results = TRUE
+              )
+   
+ggplot(betaconv_ols_kapitalizam$regdata, aes(ln_initial, ln_growth)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw()+
+  labs(
+       title = "Konvergencija dohotka u EU (kapitalizam)",
+    subtitle = "Godine: 1995-2016",
+    caption  = "Izvor: Maddison database; izrada autora") +
+  ylab("Stopa rasta BDP") +
+  xlab("Dohodak u početnoj godini") + 
+  annotate(
+    geom = "text", x = 9.45, y = 0.021583902, label = "Hrvatska", hjust = "right")+ 
+  annotate(
+    geom = "text", x = 9.75, y = 00.028113613, label = "Slovenia", hjust = "left")
+
+```
+
+
+<br>
+
+.footer[[*] [PROGRAM KONVERGENCIJE REPUBLIKE HRVATSKE ZA RAZDOBLJE 2022–2024](https://ec.europa.eu/info/sites/default/files/2021-croatia-convergence-programme_hr.pdf); [What Remains of Cross-Country Convergence](https://mpra.ub.uni-muenchen.de/89355/1/MPRA_paper_89355.pdf); [New evidence on convergence](https://growthecon.com/blog/Convergence/)]
 
 
 ---
@@ -669,12 +769,20 @@ layout: true
 ---
 <br>
 <br>
-
-
-
-.footer[[*] [DIGITALIZACIJA U TRGOVINI](http://library.fes.de/pdf-files/bueros/kroatien/16159.pdf)]
-
-
+<br>
+- [DESI Index Hrvatska](https://digital-strategy.ec.europa.eu/en/policies/desi-croatia)
+<br>
+<br>
+- [Digtalizacija u trgovini](http://library.fes.de/pdf-files/bueros/kroatien/16159.pdf)
+<br>
+<br>
+- [Digtalizacija tržišta rada](https://irmo.hr/wp-content/uploads/2019/04/Digitalna-transformacija-7-4-19-I.pdf)
+<br>
+<br>
+- [Digital Croatia](https://datareportal.com/digital-in-croatia)
+<br>
+<br>
+- [Rast ICT u hrvatskoj](https://www.netokracija.com/analiza-it-industrije-2019-175313)
 ---
 layout: true
 # Institucije i politička ekonomije
