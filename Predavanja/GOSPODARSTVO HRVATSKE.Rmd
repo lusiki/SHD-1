@@ -787,7 +787,18 @@ layout: true
 layout: true
 # Institucije i politička ekonomije
 ---
-
+<br>
+<br>
+<br>
+<br>
+- [Slučaj Agrokor: Kriza najveće hrvatske kompanije](https://library.fes.de/pdf-files/bueros/kroatien/13829.pdf)
+<br>
+<br>
+- [ULOGA “POVIJESTI EKONOMSKE MISLI” U OBRAZOVANJU EKONOMISTA](https://hrcak.srce.hr/28775)
+<br>
+<br>
+- [Politička ekonomija-kolegij](https://www.efzg.unizg.hr/default.aspx?id=16032)
+<br>
 ---
 layout: false
 class: middle, inverse
