@@ -196,23 +196,25 @@ layout: true
 ---
 <br>
 <br>
-
+- dio [Ekonomike razvoja](https://www.lse.ac.uk/resources/calendar2020-2021/courseGuides/EC/2020_EC428.htm) (makroekonomika dugog roka)
 <br>
 <br>
-- 
+- najvažniji [trendovi i stilizirane činjenice](https://scholar.harvard.edu/files/dani-rodrik/files/structural-change-fundamentals-and-growth-an-overview_revised.pdf) iz područja ; također [vidi](https://www.nber.org/system/files/working_papers/w23378/w23378.pdf)
 <br>
 <br>
-- 
+- oskudni akademski resursi; kolegiji izrazito malobrojni: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
 <br>
 <br>
-- 
+- [Phd na temu strukturne promjene](file:///C:/Users/Lukas/AppData/Local/Temp/lavopa_alejandro.pdf) ; [Bsc natemu strukturne promjene](https://dspace.cuni.cz/bitstream/handle/20.500.11956/45830/BPTX_2010_2__0_291850_0_110599.pdf?sequence=1&isAllowed=y)
 <br>
 <br>
-- 
+- Radni Papir na temu [Patterns of Structural Change in the New EU Member States](http://www.grincoh.eu/media/serie_1__growth__structural_change__deve/grincoh_wp1.04_havlik.pdf)
 <br>
 <br>
--  
-
+- [STEG](https://steg.cepr.org/) platforma  
+<br>
+<br>
+- interdisciplinarno područje: ekonomika, sociologija, demografija, geografija
 
 ---
 layout: true
@@ -220,28 +222,54 @@ layout: true
 ---
 <br>
 <br>
+- tercijarizacijski proces od 70-ih godina
 <br>
-- 
 <br>
-- 
+- industrijalizacija i deagrarizacija
 <br>
-- 
 <br>
--
+- razlike u razvijenosti na globanoj razini (efekti globalizacije) 
 <br>
-- 
 <br>
-- 
+- kako mjeriti strukturnu promjenu (zaposlenost, BDP/BDV, produktivnost)!?
 <br>
-- 
 <br>
-- 
+- podjela gospodarstva na privredne sektore (primarni, sekundarni, tercijarni, kvartarni)
 <br>
--
 <br>
-- 
+- mnoštvo društveno relevantnih tema koje se vežu uz dominantno ekonomski proces strukturne promjene
 <br>
-- 
+<br>
+- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene
+---
+layout: true
+# Pozadina tercijarizacije
+---
+<br>
+<br>
+- **ekonomska ponuda**: uslijed porasta produktivnosti proizvođački sektor smanjuje potrebe za radnom snagom koja zbog toga prelazi u uslužni sektor (vidi: [Baumol, 1967](https://www.jstor.org/stable/1812111))
+<br>
+<br>
+- **potražna strana ekonomije**: zbog porasta agregatnog dohotka preferencije potrošača pomiču se u smjeru proizvoda uslužnog sektora što povećava njegovu potražnju (outputom) i relativnu važnost u strukturi gospodarstva (vidi: [Fisher, 1939](https://onlinelibrary.wiley.com/doi/10.1111/j.1475-4932.1939.tb01015.x); [Clark, 1957](https://academic.oup.com/ej/article-abstract/68/270/370/5248780); [Fuchs, 1968](https://econpapers.repec.org/bookchap/nbrnberbk/fuch68-1.htm);[ Schettkat, 2002](https://ftp.iza.org/dp964.pdf))
+<br>
+<br>
+- **sektorska struktura uslužnih djelatnosti**: tehnologija, nove prilike i potrebe u društvu dovode do rasta tih podsektora (vidi: [Castells,1996](https://onlinelibrary.wiley.com/doi/book/10.1002/9781444319514) )
+- industrijalizacija i deagrarizacija
+<br>
+<br>
+- **sektorska struktura proizvođačkih i uslužnih djelatnosti**: rast uslužnog sektora zbog rastućih potreba proizvodnog sektora za intermedijarnim uslužnim djelatnostima odnosno poslovnim uslugama (vidi: [Wolfl, 2004](https://ideas.repec.org/a/sls/ipmsls/v8y20047.html); [Pilat, 2005](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1690954))
+
+---
+layout: true
+# Pozadina tercijarizacije
+---
+
+- podugovaranje i konkurentski pritisak (vidi: [Rowthorn i Couttus, 2004](https://econpapers.repec.org/article/oupcambje/v_3a28_3ay_3a2004_3ai_3a5_3ap_3a767-790.htm) )
+
+- globalizacija i neintervencionizam (vidi: [Tregenna, 2018](http://pinguet.free.fr/tregenna2016.pdf))
+
+- liberalizacija i ulazak Kine na globalno tržište (vidi: [Rodrik,2015](https://drodrik.scholar.harvard.edu/files/dani-rodrik/files/premature_deindustrialization_revised2.pdf))
+
 
 
 ---
@@ -274,11 +302,20 @@ layout: true
 
 ---
 layout: true
-# Najvažniji trendovi
+# Najvažniji trendovi u Hrvatskoj (zadnjih 70 godina)
 ---
 <br>
 <br>
-
+- pregled zadnjih 70 godina
+<br>
+<br>
+- deagrarizacija i socijalistočka industrijalizacija nakon II. svjetskog rata
+<br>
+<br>
+- tercijarizacija od 70-ih do danas
+<br>
+<br>
+- porast važnosti intelektualnih usluga od početka 21.st
 
 
 
