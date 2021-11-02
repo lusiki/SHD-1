@@ -13,6 +13,7 @@ Izabrane ekonomske teme.
 ## Nekoliko predavanja ekonomske tematike za kolegij **SOCIOLOGIJA HRVATSKOG DRUŠTVA**:
 <br>
 <br>
-[Gospodarstvo Hrvatske](https://raw.githack.com/lusiki/SHD-1/main/Predavanja/GOSPODARSTVO-HRVATSKE.html)
+
+<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/GOSPODARSTVO-HRVATSKE.html">Gospodarstvo Hrvatske</a>
 <br>
 <br>
