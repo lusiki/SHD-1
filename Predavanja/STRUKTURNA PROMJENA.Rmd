@@ -306,7 +306,7 @@ layout: true
 
 ---
 layout: true
-# Najvažniji trendovi u Hrvatskoj (zadnjih 70 godina)
+# Najvažniji trendovi u Hrvatskoj 
 ---
 <br>
 <br>
@@ -346,7 +346,7 @@ layout: true
 
 ---
 layout: true
-# Sektorska struktura 1971. godina 
+# Sektorska struktura (1971.-2011.) 
 ---
 <br>
 
@@ -356,7 +356,7 @@ knitr::include_graphics('../Foto/1971.jpg')
 
 ---
 layout: true
-# Sektorska struktura 1971. godina (žene)
+# Sektorska struktura (1971.-2011.;žene)
 ---
 <br>
 
@@ -365,7 +365,7 @@ knitr::include_graphics('../Foto/1971w.jpg')
 ```
 ---
 layout: true
-# Sektorska struktura 1971. godina (žene)
+# Sektorska struktura (1971.-2011.;muškarci)
 ---
 <br>
 ```{r echo=FALSE, out.width='60%', out.height='70%'}
@@ -373,29 +373,10 @@ knitr::include_graphics('../Foto/1971m.jpg')
 ```
 ---
 layout: true
-# Dugoročni trendovi
+# Zadnjih 20 godina 
 ---
 <br>
-<br>
-<br>
-- 
-<br>
-- 
-<br>
--
-<br>
-- 
-<br>
-- 
-<br>
-- 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-.footer[[*] []()]
 
 ---
 layout: false

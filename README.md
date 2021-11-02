@@ -10,14 +10,14 @@ Izabrane ekonomske teme.
 
 <br>
 <br>
-## Nekoliko predavanja ekonomske tematike za kolegij **SOCIOLOGIJA HRVATSKOG DRUŠTVA**:
+## Nekoliko predavanja ekonomske tematike za kolegij SOCIOLOGIJA HRVATSKOG DRUŠTVA:
 <br>
 <br>
 
 <a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/GOSPODARSTVO-HRVATSKE.html">1. Gospodarstvo Hrvatske</a>
 <br>
 <br>
-<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.html">2. Ekonomska struktura RH</a>
+<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.html">2. Ekonomska struktura Hrvatske</a>
 <br>
 <br>
 <a href="">3. Digitalizacija</a>
