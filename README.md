@@ -14,6 +14,6 @@ Izabrane ekonomske teme.
 <br>
 <br>
 
-<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/GOSPODARSTVO-HRVATSKE.html">Gospodarstvo Hrvatske</a>
+<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/GOSPODARSTVO-HRVATSKE.html">1. Gospodarstvo Hrvatske</a>
 <br>
 <br>
