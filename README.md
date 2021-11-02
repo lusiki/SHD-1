@@ -17,10 +17,10 @@ Izabrane ekonomske teme.
 <a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/GOSPODARSTVO-HRVATSKE.html">1. Gospodarstvo Hrvatske</a>
 <br>
 <br>
-<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.htm">2. Ekonomska struktura RH</a>
+<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.html">2. Ekonomska struktura RH</a>
 <br>
 <br>
-<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.htm">3. Digitalizacija</a>
+<a href="">3. Digitalizacija</a>
 <br>
 <br>
-<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.htm">4. Tehnološki transfer</a>
+<a href="">4. Tehnološki transfer</a>
