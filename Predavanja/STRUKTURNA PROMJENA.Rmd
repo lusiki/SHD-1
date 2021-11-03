@@ -397,7 +397,7 @@ layout: true
 
 #### Sektorski udjeli u razvijenim zemljama u dugom roku (1800.-2000.)
 <br>
-```{r echo=FALSE, out.width='80%', out.height='70%'}
+```{r echo=FALSE, out.width='60%', out.height='70%'}
 knitr::include_graphics('../Foto/nber1.jpg')
 ```
 
@@ -451,25 +451,25 @@ layout: true
 ---
 <br>
 
-```{r echo=FALSE, out.width='60%', out.height='70%'}
+```{r echo=FALSE, out.width='50%', out.height='50%'}
 knitr::include_graphics('../Foto/1971.jpg')
 ```
 
 ---
 layout: true
-# Sektorska struktura (1971.-2011.;žene)
+# Sektorska struktura (1971.-2011.; žene)
 ---
 <br>
 
-```{r echo=FALSE, out.width='60%', out.height='70%'}
+```{r echo=FALSE, out.width='50%', out.height='50%'}
 knitr::include_graphics('../Foto/1971w.jpg')
 ```
 ---
 layout: true
-# Sektorska struktura (1971.-2011.;muškarci)
+# Sektorska struktura (1971.-2011.; muškarci)
 ---
 <br>
-```{r echo=FALSE, out.width='60%', out.height='70%'}
+```{r echo=FALSE, out.width='50%', out.height='50%'}
 knitr::include_graphics('../Foto/1971m.jpg')
 ```
 ---
