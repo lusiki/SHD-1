@@ -196,29 +196,24 @@ layout: true
 ---
 <br>
 <br>
-- dio [Ekonomike razvoja](https://www.lse.ac.uk/resources/calendar2020-2021/courseGuides/EC/2020_EC428.htm) (makroekonomika dugog roka)
+- dio [ekonomike razvoja](https://www.lse.ac.uk/resources/calendar2020-2021/courseGuides/EC/2020_EC428.htm) (makroekonomika dugog roka)
 <br>
 <br>
-- najvažniji [trendovi i stilizirane činjenice](https://scholar.harvard.edu/files/dani-rodrik/files/structural-change-fundamentals-and-growth-an-overview_revised.pdf) iz područja ; također [vidi](https://www.nber.org/system/files/working_papers/w23378/w23378.pdf)
+- najvažniji [trendovi i stilizirane činjenice](https://scholar.harvard.edu/files/dani-rodrik/files/structural-change-fundamentals-and-growth-an-overview_revised.pdf) iz područja (također [vidi](https://www.nber.org/system/files/working_papers/w23378/w23378.pdf))
 <br>
 <br>
-- oskudni akademski resursi; kolegiji izrazito malobrojni: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
+- akademski resursi -> područje nije u fokusu
 <br>
 <br>
-- [Phd na temu strukturne promjene](file:///C:/Users/Lukas/AppData/Local/Temp/lavopa_alejandro.pdf) ; [Bsc natemu strukturne promjene](https://dspace.cuni.cz/bitstream/handle/20.500.11956/45830/BPTX_2010_2__0_291850_0_110599.pdf?sequence=1&isAllowed=y)
+- kolegiji malobrojni: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
+
 <br>
 <br>
-- Radni Papir na temu [Patterns of Structural Change in the New EU Member States](http://www.grincoh.eu/media/serie_1__growth__structural_change__deve/grincoh_wp1.04_havlik.pdf)
-<br>
-<br>
-- [STEG](https://steg.cepr.org/) platforma  
-<br>
-<br>
-- interdisciplinarno područje: ekonomika, sociologija, demografija, geografija
+- interdisciplinarno područje: **ekonomika**, sociologija, demografija, geografija
 
 ---
 layout: true
-# Pregled tematike 
+# Najvažnije teme u području
 ---
 <br>
 <br>
@@ -237,10 +232,36 @@ layout: true
 - podjela gospodarstva na privredne sektore (primarni, sekundarni, tercijarni, kvartarni)
 <br>
 <br>
-- mnoštvo društveno relevantnih tema koje se vežu uz dominantno ekonomski proces strukturne promjene
+- mnoštvo društveno relevantnih tema koje se vežu uz dominantno ekonomski proces strukturne promjene (urbanizacija, lokacijska promjena, institucionalne promjene)
 <br>
 <br>
-- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene u zemljama u razvoju
+- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene (i u drugim zemljama u razvoju;[varieties of capitalism](https://scholar.harvard.edu/files/hall/files/vofcintro.pdf) literatura )
+
+---
+layout: true
+# Teoretski okvir
+---
+
+.pull-left[
+##### Strukturalisti
+- dualna ekonomska struktura <br>
+([Ranis i Fei,1961](https://www.depfe.unam.mx/actividades/11/desarrollo-crecimiento/11-2_catcdejr_04_ranis_fei_1961.pdf))
+- tradicionani(agro) -> moderni(ind) sektori
+]
+
+
+.pull-right[
+##### Neoklasičari
+- neoklasični model rasta ([Solow,1956](http://piketty.pse.ens.fr/files/Solow1956.pdf)) 
+- jedan (reprezentativni) sektor koji ovisi o produktivnosti  ([Grossman i Helpman,1991](https://mitpress.mit.edu/books/innovation-and-growth-global-economy) ; [Aghion i Howitt,1992](https://dash.harvard.edu/bitstream/handle/1/12490578/A%20Model%20of%20Growth%20through%20Creative%20Destruction.pdf))
+]
+<br>
+<br>
+#### IZAZOVI RASTA i RAZVOJA
+- Kako osigurati tok resursa iz tradicionalnih u moderne sektore?
+- Da li su je bitno znanje i vještine ili [institucije](https://www2.econ.iastate.edu/tesfatsi/NewInstE.North.pdf)?
+
+
 ---
 layout: true
 # Pozadina tercijarizacije
@@ -270,6 +291,10 @@ layout: true
 
 - liberalizacija i ulazak Kine na globalno tržište (vidi: [Rodrik,2015](https://drodrik.scholar.harvard.edu/files/dani-rodrik/files/premature_deindustrialization_revised2.pdf))
 
+<br>
+<br>
+#### NE-EKONOMSKI RAZLOZI
+
 ---
 layout: false
 class: middle, inverse
@@ -293,15 +318,53 @@ layout: true
 layout: true
 # Najvažniji trendovi
 ---
+
+#### Sektorski udjeli globalne ekonomije (1970.-2008.)
 <br>
-<br>
+```{r echo=FALSE, out.width='80%', out.height='70%'}
+knitr::include_graphics('../Foto/unido1.jpg')
+```
+
+.footer[[*]Izvor: UNIDO i UN]
 
 ---
 layout: true
 # Najvažniji trendovi
 ---
+
+#### Globalna dodana vrijednost po regijama svijeta (1970.-2008.)
 <br>
+```{r echo=FALSE, out.width='80%', out.height='70%'}
+knitr::include_graphics('../Foto/unido2.jpg')
+```
+
+.footer[[*]Izvor: UNIDO i UN]
+
+---
+layout: true
+# Najvažniji trendovi
+---
+
+#### Globalna dodana vrijednost po sektorima i regijama svijeta (1970.-2008.)
 <br>
+```{r echo=FALSE, out.width='80%', out.height='70%'}
+knitr::include_graphics('../Foto/unido3.jpg')
+```
+
+.footer[[*]Izvor: UNIDO i UN]
+
+---
+layout: true
+# Najvažniji trendovi
+---
+
+#### Globalna dodana vrijednost (1970.-2008.)
+<br>
+```{r echo=FALSE, out.width='80%', out.height='70%'}
+knitr::include_graphics('../Foto/unido4.jpg')
+```
+
+.footer[[*]Izvor: UNIDO i UN]
 
 
 ---
@@ -388,7 +451,19 @@ layout: true
 # Knjige
 ---
 
-
+- [Structural Change, Fundamentals, and Growth](https://drodrik.scholar.harvard.edu/files/dani-rodrik/files/structural_change_fundamentals_and_growth.pdf)
+<br>
+<br>
+- [Phd na temu strukturne promjene](file:///C:/Users/Lukas/AppData/Local/Temp/lavopa_alejandro.pdf) ; [Bsc na temu strukturne promjene](https://dspace.cuni.cz/bitstream/handle/20.500.11956/45830/BPTX_2010_2__0_291850_0_110599.pdf?sequence=1&isAllowed=y)
+<br>
+<br>
+- Radni Papir na temu [Patterns of Structural Change in the New EU Member States](http://www.grincoh.eu/media/serie_1__growth__structural_change__deve/grincoh_wp1.04_havlik.pdf)
+<br>
+<br>
+<br>
+- [Structural Change in Investment and Consumption—A Unified Analysis ](https://academic.oup.com/restud/article-abstract/88/3/1311/5811236)
+<br>
+- [GROWTH AND STRUCTURAL TRANSFORMATION](https://www.nber.org/system/files/working_papers/w18996/w18996.pdf)
 ---
 
 layout:false
