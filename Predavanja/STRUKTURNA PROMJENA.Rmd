@@ -202,16 +202,16 @@ layout: true
 - najvažniji [trendovi i stilizirane činjenice](https://scholar.harvard.edu/files/dani-rodrik/files/structural-change-fundamentals-and-growth-an-overview_revised.pdf) iz područja (također [vidi](https://www.nber.org/system/files/working_papers/w23378/w23378.pdf))
 <br>
 <br>
-- akademski resursi -> područje nije u fokusu
+- akademski resursi brojni ali područje općenito nije u fokusu
 <br>
 <br>
-- kolegiji malobrojni: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
+- kolegiji: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
 <br>
 <br>
-- interdisciplinarno područje: **ekonomika**, sociologija, demografija, geografija
+- interdisciplinarno područje: ekonomika, sociologija, demografija, geografija
 <br>
 <br>
-- IZVORI PODTAKA:[Penn World Table](https://www.rug.nl/ggdc/productivity/pwt/?lang=en), [EU KLEMS](http://www.euklems.net/), [National Accounts](https://unstats.un.org/unsd/snaama/index), [OECD](https://data.oecd.org/), [WDI](https://databank.worldbank.org/source/world-development-indicators) 
+- kvalitetni izvori podataka: [Penn World Table](https://www.rug.nl/ggdc/productivity/pwt/?lang=en), [EU KLEMS](http://www.euklems.net/), [National Accounts](https://unstats.un.org/unsd/snaama/index), [OECD](https://data.oecd.org/), [WDI](https://databank.worldbank.org/source/world-development-indicators) 
 ---
 layout: true
 # Najvažnije teme u području
@@ -227,7 +227,7 @@ layout: true
 - razlike u razvijenosti na globanoj razini (efekti globalizacije) 
 <br>
 <br>
-- kako mjeriti strukturnu promjenu (zaposlenost, BDP/BDV, produktivnost)!?
+- kako mjeriti strukturnu promjenu (zaposlenost, BDP/BDV, produktivnost, potrošnja)!?
 <br>
 <br>
 - podjela gospodarstva na privredne sektore (primarni, sekundarni, tercijarni, kvartarni)
@@ -236,7 +236,7 @@ layout: true
 - mnoštvo društveno relevantnih tema koje se vežu uz dominantno ekonomski proces strukturne promjene (urbanizacija, lokacijska promjena, institucionalne promjene)
 <br>
 <br>
-- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene (i u drugim zemljama u razvoju;[varieties of capitalism](https://scholar.harvard.edu/files/hall/files/vofcintro.pdf) literatura )
+- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene (i u drugim zemljama u razvoju; [varieties of capitalism](https://scholar.harvard.edu/files/hall/files/vofcintro.pdf) literatura )
 
 ---
 layout: true
@@ -366,6 +366,36 @@ knitr::include_graphics('../Foto/unido4.jpg')
 ```
 
 .footer[[*]Izvor: UNIDO i UN]
+
+---
+layout: true
+# Najvažniji trendovi
+---
+
+#### Globalna zaposlenost po sektorima (1980.-2000.)
+<br>
+```{r echo=FALSE, out.width='80%', out.height='70%'}
+knitr::include_graphics('../Foto/unido4.jpg')
+```
+
+.footer[[*]Izvor: World Developement Indicators]
+
+
+
+
+---
+layout: true
+# Najvažniji trendovi
+---
+
+#### Sektorski udjeli u razvijenim zemljama u dugom roku (1800.-2000.)
+<br>
+```{r echo=FALSE, out.width='80%', out.height='70%'}
+knitr::include_graphics('../Foto/nber1.jpg')
+```
+
+
+.footer[[*]Izvor: Razne povijesne statistike; također [vidi](https://www.nber.org/system/files/working_papers/w18996/w18996.pdf)]
 
 
 ---
