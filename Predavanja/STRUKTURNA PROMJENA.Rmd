@@ -206,11 +206,12 @@ layout: true
 <br>
 <br>
 - kolegiji malobrojni: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
-
 <br>
 <br>
 - interdisciplinarno područje: **ekonomika**, sociologija, demografija, geografija
-
+<br>
+<br>
+- IZVORI PODTAKA:[Penn World Table](https://www.rug.nl/ggdc/productivity/pwt/?lang=en), [EU KLEMS](http://www.euklems.net/), [National Accounts](https://unstats.un.org/unsd/snaama/index), [OECD](https://data.oecd.org/), [WDI](https://databank.worldbank.org/source/world-development-indicators) 
 ---
 layout: true
 # Najvažnije teme u području
