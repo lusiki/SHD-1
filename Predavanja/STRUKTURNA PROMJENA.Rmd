@@ -457,7 +457,7 @@ knitr::include_graphics('../Foto/1971.jpg')
 
 ---
 layout: true
-# Sektorska struktura (1971.-2011.; žene)
+# Sektorska struktura -ž (1971.-2011.)
 ---
 <br>
 
@@ -466,7 +466,7 @@ knitr::include_graphics('../Foto/1971w.jpg')
 ```
 ---
 layout: true
-# Sektorska struktura (1971.-2011.; muškarci)
+# Sektorska struktura -m (1971.-2011.)
 ---
 <br>
 ```{r echo=FALSE, out.width='50%', out.height='50%'}
