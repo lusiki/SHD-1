@@ -495,11 +495,35 @@ layout: true
 <br>
 <br>
 <br>
+
 ```{r echo=FALSE, out.width='50%', out.height='50%'}
 knitr::include_graphics("../Foto/teranima.gif")
 
 ```
-
+---
+layout: true
+# Zadnjih 20 godina 
+---
+<br>
+<br>
+```{r echo=FALSE,message=FALSE,warning = FALSE,fig.height=5,fig.width=9}
+library(tidyverse)
+options(scipen=999, digits = 1)
+dta <- read.csv2("../Podatci/struktura.csv") %>%
+  select(reportyear, sektor = djelatnosti, n, prihod, izvoz, uvoz, plata, rad) %>%
+  gather(varijable, vrijednosti, -reportyear, -sektor) 
+dta %>%
+  ggplot(.,aes(reportyear,vrijednosti, col=sektor)) +
+  geom_line() +
+  facet_wrap(~varijable, scales = "free") +
+  xlab("Godina") +
+  ylab("Iznos") +
+  ggtitle("Agregatni pokazatelji za sva hrvatska poduzeća") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  
+  
+  
+```
 
 
 ---
