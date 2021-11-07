@@ -494,8 +494,8 @@ knitr::include_graphics('../Foto/1971m.jpg')
 layout: true
 # Zadnjih 20 godina 
 ---
-
-
+<br>
+<br>
 ```{r echo=FALSE, out.width='50%', out.height='50%'}
 knitr::include_graphics("../Foto/teranima.gif")
 
@@ -512,6 +512,9 @@ class: middle, inverse
 layout: true
 # Knjige
 ---
+<br>
+<br>
+<br>
 
 - [New Perspectives on Structural Change](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198850113.001.0001/oso-9780198850113)
 <br>
