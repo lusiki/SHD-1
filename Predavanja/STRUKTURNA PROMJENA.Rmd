@@ -394,7 +394,7 @@ layout: true
 
 #### Globalna zaposlenost po sektorima (1980.-2000.)
 <br>
-```{r echo=FALSE, out.width='40%', out.height='70%'}
+```{r echo=FALSE, out.width='30%', out.height='70%'}
 knitr::include_graphics('../Foto/wdi.jpg')
 ```
 
@@ -427,6 +427,7 @@ layout: true
 - pregled zadnjih 70 godina
 <br>
 <br>
+<br>
 - deagrarizacija i socijalistočka industrijalizacija nakon II. svjetskog rata
 <br>
 <br>
@@ -452,16 +453,13 @@ layout: true
 - demografija (Wertheimer-Baletić, 1978; Nejašmić, 2005; Akrap, 2011)
 <br>
 <br>
-- sociologija  (Peračković, 2010; Matković, 2003; Majetić, 2015; Gjivoje, 2008; Švob-Đokić et al., 2008)
+- sociologija  (Peračković, 2010; Matković, 2003; Majetić, 2015; Gjivoje, 2008; Švob-Đokić i dr., 2008)
 <<br>
 <br>
 - ekonomija (Gelo i Družić, 2016)
 
 
 
-
-
-.footer[[*] []()]
 
 ---
 layout: true
@@ -475,7 +473,7 @@ knitr::include_graphics('../Foto/1971.jpg')
 
 ---
 layout: true
-# Sektorska struktura -ž (1971.-2011.)
+# Sektorska struktura (žene;1971.-2011.)
 ---
 <br>
 
@@ -484,7 +482,7 @@ knitr::include_graphics('../Foto/1971w.jpg')
 ```
 ---
 layout: true
-# Sektorska struktura -m (1971.-2011.)
+# Sektorska struktura (muškarci;1971.-2011.)
 ---
 <br>
 ```{r echo=FALSE, out.width='50%', out.height='50%'}
@@ -494,6 +492,7 @@ knitr::include_graphics('../Foto/1971m.jpg')
 layout: true
 # Zadnjih 20 godina 
 ---
+<br>
 <br>
 <br>
 ```{r echo=FALSE, out.width='50%', out.height='50%'}
