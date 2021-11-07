@@ -519,7 +519,13 @@ dta %>%
   xlab("Godina") +
   ylab("Iznos") +
   ggtitle("Agregatni pokazatelji za sva hrvatska poduzeća") +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme(axis.text.x = element_text(angle = 30,
+                                   vjust = 0.5,
+                                   hjust=1,
+                                   size = 8),
+        axis.text.y = element_text(size = 8),
+        axis.title.x = element_text(size = 9),
+        axis.title.y = element_text(size = 9))
   
   
   
