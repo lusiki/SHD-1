@@ -394,7 +394,7 @@ layout: true
 
 #### Globalna zaposlenost po sektorima (1980.-2000.)
 <br>
-```{r echo=FALSE, out.width='30%', out.height='70%'}
+```{r echo=FALSE, out.width='20%', out.height='70%'}
 knitr::include_graphics('../Foto/wdi.jpg')
 ```
 
