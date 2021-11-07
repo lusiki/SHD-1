@@ -171,15 +171,16 @@ layout: true
 <br>
 <br>
 <br>
-<br>
-
 - Obuhvat područja
+<br>
 <br>
 <br>
 - Strukturna promjena (svjetskog gospodarstva) 
 <br>
 <br>
+<br>
 - Pokazatelji ekonomske strukture u RH
+<br>
 <br>
 <br>
 - Resursi
@@ -196,16 +197,14 @@ layout: true
 ---
 <br>
 <br>
+<br>
 - dio [ekonomike razvoja](https://www.lse.ac.uk/resources/calendar2020-2021/courseGuides/EC/2020_EC428.htm) (makroekonomika dugog roka)
 <br>
 <br>
-- [najvažnije teme](- [New Perspectives on Structural Change](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198850113.001.0001/oso-9780198850113))
+- pregled [najvažnijih tema](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198850113.001.0001/oso-9780198850113) iz područja
 <br>
 <br>
 - najvažniji [trendovi i stilizirane činjenice](https://scholar.harvard.edu/files/dani-rodrik/files/structural-change-fundamentals-and-growth-an-overview_revised.pdf) iz područja (također [vidi](https://www.nber.org/system/files/working_papers/w23378/w23378.pdf))
-<br>
-<br>
-- akademski resursi brojni ali područje općenito nije u fokusu
 <br>
 <br>
 - kolegiji: [Economic Development and Structural Transformation](http://www.drps.ed.ac.uk/17-18/dpt/cxecnm10093.htm), [EUROPE: ECONOMIC POLICY & STRUCTURAL CHANGE](https://www.ucl.ac.uk/~uctpa36/C41%20course%20outline%202003.pdf)
@@ -230,7 +229,7 @@ layout: true
 - razlike u razvijenosti na globanoj razini (efekti globalizacije) 
 <br>
 <br>
-- kako mjeriti strukturnu promjenu (zaposlenost, BDP/BDV, produktivnost, potrošnja)!?
+- kako mjeriti strukturnu promjenu!? (zaposlenost, BDP/BDV, produktivnost, potrošnja)
 <br>
 <br>
 - podjela gospodarstva na privredne sektore (primarni, sekundarni, tercijarni, kvartarni)
@@ -239,13 +238,14 @@ layout: true
 - mnoštvo društveno relevantnih tema koje se vežu uz dominantno ekonomski proces strukturne promjene (urbanizacija, lokacijska promjena, institucionalne promjene)
 <br>
 <br>
-- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene (i u drugim zemljama u razvoju; [varieties of capitalism](https://scholar.harvard.edu/files/hall/files/vofcintro.pdf) literatura )
+- brojne specifičnosti Hrvatskog razvojnog puta i strukturne promjene (također u drugim zemljama u razvoju; [varieties of capitalism](https://scholar.harvard.edu/files/hall/files/vofcintro.pdf) literatura )
 
 ---
 layout: true
 # Teoretski okvir
 ---
-
+<br>
+<br>
 .pull-left[
 ##### Strukturalisti
 - dualna ekonomska struktura <br>
@@ -262,8 +262,9 @@ layout: true
 <br>
 <br>
 #### IZAZOVI RASTA i RAZVOJA
-- Kako osigurati tok resursa iz tradicionalnih u moderne sektore?
-- Da li su je bitno znanje i vještine ili [institucije](https://www2.econ.iastate.edu/tesfatsi/NewInstE.North.pdf)?
+- Strukturalisti: Kako osigurati tok resursa iz tradicionalnih u moderne sektore?
+<br>
+- Neoklasičari: Da li su je bitno znanje i vještine ili [institucije](https://www2.econ.iastate.edu/tesfatsi/NewInstE.North.pdf)?
 
 
 ---
@@ -290,19 +291,23 @@ layout: true
 ---
 <br>
 <br>
+<br>
 - podugovaranje i konkurentski pritisak (vidi: [Rowthorn i Couttus, 2004](https://econpapers.repec.org/article/oupcambje/v_3a28_3ay_3a2004_3ai_3a5_3ap_3a767-790.htm) )
 <br>
 <br>
 - globalizacija i neintervencionizam (vidi: [Tregenna, 2018](http://pinguet.free.fr/tregenna2016.pdf))
 <br>
 <br>
-- liberalizacija i ulazak Kine na globalno tržište (vidi: [Rodrik,2015](https://drodrik.scholar.harvard.edu/files/dani-rodrik/files/premature_deindustrialization_revised2.pdf))
+- liberalizacija i ulazak Kine na globalno tržište (vidi: [Rodrik, 2015](https://drodrik.scholar.harvard.edu/files/dani-rodrik/files/premature_deindustrialization_revised2.pdf))
 <br>
 <br>
 - financijalizacija
 <br>
 <br>
 - multinacionalne tvrtke
+<br>
+<br>
+- mnoštvo neekonomskih faktora
 ---
 layout: false
 class: middle, inverse
@@ -314,6 +319,7 @@ layout: true
 ---
 <br>
 <br>
+<br>
 - povećanje udjela sektora usluga u ukupnoj dodatnoj vrijednosti i zaposlenosti
 <br>
 <br>
@@ -321,6 +327,13 @@ layout: true
 <br>
 <br>
 - postojanje rastuće premije na tehnološki specifične vještine proizvodnog faktora rada
+<br>
+<br>
+- čvrsta veza između ekonomske strukture i bogatsva (stupnja razvoja) neke zemlje
+<br>
+<br>
+- dugoročni proces na koji nije moguće u potpunosti utjecati javnim politikama
+
 
 ---
 layout: true
@@ -382,7 +395,7 @@ layout: true
 #### Globalna zaposlenost po sektorima (1980.-2000.)
 <br>
 ```{r echo=FALSE, out.width='80%', out.height='70%'}
-knitr::include_graphics('../Foto/unido4.jpg')
+knitr::include_graphics('../Foto/wdi.jpg')
 ```
 
 .footer[[*]Izvor: World Developement Indicators]
@@ -397,7 +410,7 @@ layout: true
 
 #### Sektorski udjeli u razvijenim zemljama u dugom roku (1800.-2000.)
 <br>
-```{r echo=FALSE, out.width='60%', out.height='70%'}
+```{r echo=FALSE, out.width='40%', out.height='70%'}
 knitr::include_graphics('../Foto/nber1.jpg')
 ```
 
@@ -421,8 +434,9 @@ layout: true
 <br>
 <br>
 - porast važnosti intelektualnih usluga od početka 21.st
-
-
+<br>
+<br>
+- ICT sektor je tehnološka granica danas
 
 ---
 layout: false
