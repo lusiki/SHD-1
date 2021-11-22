@@ -26,4 +26,4 @@ Izabrane ekonomske teme.
 <a href="">4. Tehnološki transfer</a>
 
 
-<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.html">Privremeno</a>
+<a href="https://raw.githack.com/lusiki/SHD-1/main/privremeno.html">Privremeno</a>
