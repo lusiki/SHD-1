@@ -1,0 +1,395 @@
+---
+title: "METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "I. znanstveni kolokvij"
+author: "Joško Marić, SN PECTINATUS"
+date: "" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{R, setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=4, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=500, #fig.path='Figs/',
+  cache=T#, echo=F, warning=F, message=F
+  )
+library(tidyverse)
+library(hrbrthemes)
+#library(fontawesome)
+
+
+```
+
+```{css, echo = F, eval = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+
+
+# PREGLED IZLAGANJA
+
+
+<br>
+#### **1. Istraživački problem**
+<br>
+#### **2. Literatura**
+<br>
+#### **3. Istraživačka pitanja, ciljevi, hipoteze**
+<br>
+#### **4. Konceptualizacija**
+<br>
+#### **5. Znanstveni doprinos**
+
+
+---
+class: inverse, middle
+layout: false
+# ISTRAŽIVAČKI PROBLEM
+---
+layout: true
+# Predmet i područje
+
+---
+<br>
+
+
+##### Predmet
+
+> Testiranje utjecaja preprocesnog modeliranja, uglađivanja modela i kalibriranja sustava strojnog učenja na točnost predviđanja budućih povrata.
+
+<br>
+<br>
+##### Područje 
+
+- kvantitativne financije u širem smislu
+<br>
+- modeliranje i predviđanje povrata na dioničkim tržištima u užem smislu 
+<br>
+- područje istraživanje se poklapa s empirijskim vrednovanjem imovine (*empirical assets pricing*)
+
+---
+layout: true
+# Problem
+
+---
+<br>
+- tradicionalno korištene statističke metode (vremenske serije)
+<br><br>
+- [porastom količine dostupnih podataka](https://academic.oup.com/rfs/article/34/7/3213/6210658) i računalnih kapaciteta sve je više zastupljena metodologija **strojnog učenja**
+<br><br>
+- algoritamsko trgovanje dominira
+<br>
+<br>
+<br>
+<br>
+> **Kako primjeniti metodologiju strojnog učenja za predviđanje ishoda na dioničkim tržištima?**
+
+
+---
+class: inverse, middle
+layout: false
+# LITERATURA
+---
+layout: true
+# Teorijski okvir
+
+---
+<br>
+<br>
+<br>
+- koncept efikasnog tržišta -> nemoguća predikcija
+<br>
+<br>
+- tržišne neefikasnosti 
+<br>
+<br>
+- tržišta nisu potpuno efikasna -> predikcija moguća
+<br>
+<br>
+- tradicionalno: tehnički vs fundamentalni indikatori 
+<br>
+<br>
+- novo: veliki podatci i alternativni pokazatelji 
+
+
+---
+layout: true
+# Metodologija
+
+---
+<br>
+<br>
+- empirijsko vrednovanje imovine bazirano na statističkoj paradigmi
+<br>
+<br>
+- standardno korištene prostorne regresije i vremenske serije
+<br>
+<br>
+- predikcija je primarno problem za strojno učenja
+<br>
+<br>
+- specifična svojstva financijskih serija + veliki podatci
+<br>
+<br>
+- primjena metodologije strojnog učenja
+<br>
+<br>
+- kako kalibrirati segmente metodologije strojnog učenja
+
+
+---
+class: inverse, middle
+layout: false
+# ISTRAŽIVAČKA PITANJA I CILJEVI
+---
+layout: true
+# Istraživačka pitanja
+
+---
+<br>
+- Na koji je način prilagoditi zavisnu varijablu kako bi se postigao bolji predikcijski rezultat? 
+<br>
+<br>
+- Na koji način prilagoditi i obraditi nezavisne varijable (inpute) sustavu strojnog učenja za postizanje boljeg predikcijskog ishoda?
+<br>
+<br>
+- Koje varijable (indikatori) imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli?
+<br>
+<br>
+- Koje su prednosti i nedostatci uvođenja alternativnih zavisnih varijabli (npr. tekst/sentiment)?
+<br>
+<br>
+- Kakve su implikacije (automatskih) ML sustava za kvantitativnu metodologiju u financijama i ekonometriji?
+
+---
+layout: true
+# Istraživački ciljevi
+---
+<br>
+<br>
+<br>
+- Utvrditi karakteristike metodologije strojnog učenja (ML) u predikciji ishoda na dioničkim tržištima.
+<br><br>
+- Ispitati važnost različitih algoritamskih segmenata u procesu kalibriranja ML algoritma.
+<br><br>
+- Istražiti predikcijsku sposobnost ML metodologije u predikciji ishoda na dioničkim tržištima.
+<br><br>
+- Definirati predikcijsku sposobnost metodologije strojnog učenja s obzirom na ključne segmente algoritamskog kanala.
+<br>
+
+---
+layout: true
+# Aplikativni ciljevi
+
+---
+<br>
+<br>
+- Primjeniti metodologiju strojnog učenja u svrhu procjene trendova na dioničkim tržištima.
+<br><br>
+- Definirati ključne elemente sustava strojnog učenja i funkcionalno ih uklopiti u algoritamski sustav. 
+<br><br>
+- Analizom predikcijske sposobnosti  strojnog učenja ocijeniti relativnu važnost ulaznih
+inputa, predprocesnih operacija i izbora modela u algoritamskom kanalu.
+<br><br>
+- Obogatiti metodološki okvir strojnog učenja predloženom metodologijom i proširiti područje primjene automatskog strojnog učenja na kontekst financijskog investiranja.
+<br>
+
+---
+class: inverse, middle
+layout: false
+# HIPOTEZE
+---
+layout: true
+# H1
+---
+<br>
+<br>
+
+> H1: *Sampling barova* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
+
+
+
+<br>
+- Smanjenje redova! Da li su određeni dijelovi uzorka bolji nego puni uzorak?
+<br><br>
+- Specifičnosti financijskih vremenskih serija?
+<br><br>
+- Implikacije za EMH!
+<br>
+
+
+.footnote[[*] Doprinos na osnovi točke 1.]
+
+---
+layout: true
+# H2
+---
+<br>
+<br>
+> H2: Smanjivanje dimenzionalnosti prostora uzorka izvlačenjem glavnih kompenenti iz uzorka poboljšava predikcijsku točnost modela.
+
+<br>
+- Smanjenje kolona!
+<br><br>
+- Koliko je Big Data i obilje podataka informacijski vrijedno?
+<br><br>
+- Koji su to bitni podatci?
+<br><br>
+- Koje metode koristiti za samanjenje dimenzionalnosti?
+<br><br>
+
+
+.footnote[[*] Doprinos na osnovi točke 1.]
+
+---
+layout: true
+# H3
+---
+<br>
+<br>
+> H3: Prediktori izvedeni iz transkripata koji se nalaze 8-k objavama sadrže značajne informacije i njihova primjena poboljšava točnost predviđanja u odnosu na isti model koji koristi samo tržišne i fundamentalne indikatore.
+
+<br>
+- Alternativne varijable!
+<br><br>
+- Puno tekstualnih izvora je potencijalno interesantno. Tekstovi iz 8k objava?
+<br><br>
+- Koji aspekti takvih tekstova su informacijski vrijedni? U kojem vremenskom periodu su relevantni?
+<br><br>
+- Na koji način prilagoditi tekst (sentiment, *vector embedding*)? 
+
+.footnote[[*] Doprinos na osnovi točke 1.]
+
+---
+layout: true
+# H4
+---
+<br>
+<br>
+> H4:Ensemble pristup (kombinacija pojedinačnih predikcija) daje bolje predikcijske rezultate od pojedinačnih ML modela.
+
+<br><br>
+- Da li je bolja predikcija jednog ili prosjeka više modela?
+<br><br>
+- Koji je najbolji model? Postoji li takav ili je to ovisno o kontekstu?
+
+<br>
+.footnote[[*] Doprinos na osnovi točke 2.]
+
+
+---
+layout: true
+# H5
+---
+<br>
+<br>
+> H5:Automatski model sa automatiziranim "preprocesuiranjem" i modeliranjem daje bolje rezultate od primjene standardnih modela strojnog ucenja bez preprocesuirnaja.
+
+<br><br>
+- 
+<br><br>
+-
+
+
+<br><br>
+.footnote[[*] Doprinos na osnovi točke 3.]
+
+---
+class: inverse, middle
+layout: false
+# ZNANSTVENI DOPRINOS 
+---
+
+layout:true
+# Doprinos
+---
+<br>
+
+> Doprinos u području kvantititativnih financija (financijske ekonometrije) za primjenu metodologije strojnog učenja u predviđanju ishoda na dioničkim tržištima.
+
+<br>
+#### **DOPRINOS NA POLJU**:
+
+1. Definiranja i formulacija značajnih i novih (zavisnih) varijabli (pokazatelja).
+<br><br>
+
+2. Smanjenja predikcijske pogreške u predviđanju  ishoda na tržištima kapitala.
+<br><br>
+
+3. Proširenje i nadogradnja ekonometrijske metodologije i alata u vidu primjene sustava strojnog učenja.
+<br>
+
+
+.footnote[[*]Vidi [rad](https://finance.fbv.kit.edu/rd_download/Machine%20Learning%20Methods%20in%20Finance.pdf) za pregled doprinosa literaturi.]
+
+---
+class: inverse, middle
+layout: false
+# REFERENCE
+---
+layout: true
+# Knjige
+
+---
+<br>
+<br>
+<br>
+[Machine Learning in Finance](https://link.springer.com/book/10.1007/978-3-030-41068-1)
+<br>
+<br>
+[Advances in Financial Machine Learning](https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086)
+<br>
+<br>
+[Machine Learning in Asset Pricing](https://press.princeton.edu/books/hardcover/9780691218700/machine-learning-in-asset-pricing)
+<br>
+<br>
+[Machine Learning for Algorithmic Trading](https://www.packtpub.com/product/machine-learning-for-algorithmic-trading-second-edition/9781839217715)
+<br>
+<br>
+[Automated Machine Learning: Methods, Systems, Challenges](https://link.springer.com/book/10.1007/978-3-030-05318-5)
+<br>
+<br>
+[Automated Machine Learning for Business](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780190941659.001.0001/oso-9780190941659)
+
+---
+layout: true
+# Članci
+
+---
+
+[Machine Learning Methods in Finance: Recent Applications and Prospects](https://finance.fbv.kit.edu/rd_download/Machine%20Learning%20Methods%20in%20Finance.pdf)
+
+[Trends and Applications of Machine Learning in Quantitative Finance](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3397005)
+
+[Text as Data](https://web.stanford.edu/~gentzkow/research/text-as-data.pdf)
+
+[An Empirical Study of Machine Learning Algorithms for Stock Daily Trading Strategy](https://www.hindawi.com/journals/mpe/2019/7816154/)
+
+[Stock Market Prediction Using Machine Learning Techniques:A Decade Survey on Methodologies, Recent Developments, and Future Directions](https://www.mdpi.com/2079-9292/10/21/2717)
+
+[Predicting Stock Market Returns with Machine Learning](https://mendoza.nd.edu/wp-content/uploads/2019/07/2018-Alberto-Rossi-Fall-Seminar-Paper-1-Stock-Market-Returns.pdf)
+
+[Diverging Roads: Theory-Based vs. Machine Learning-Implied Stock Risk Premia](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3536835)
+
+[Market Efficiency in the Age of Big Data](https://www.nber.org/papers/w26586)
+
+---
+class: inverse, middle
+layout:false
+# Hvala na pozornosti!

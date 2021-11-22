@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Joško Marić, SN PECTINATUS" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA
+## I. znanstveni kolokvij
+### Joško Marić, SN PECTINATUS
+
+---
+
+
+
+
+
+
+
+
+
+# PREGLED IZLAGANJA
+
+
+&lt;br&gt;
+#### **1. Istraživački problem**
+&lt;br&gt;
+#### **2. Literatura**
+&lt;br&gt;
+#### **3. Istraživačka pitanja, ciljevi, hipoteze**
+&lt;br&gt;
+#### **4. Konceptualizacija**
+&lt;br&gt;
+#### **5. Znanstveni doprinos**
+
+
+---
+class: inverse, middle
+layout: false
+# ISTRAŽIVAČKI PROBLEM
+---
+layout: true
+# Predmet i područje
+
+---
+&lt;br&gt;
+
+
+##### Predmet
+
+&gt; Testiranje utjecaja preprocesnog modeliranja, uglađivanja modela i kalibriranja sustava strojnog učenja na točnost predviđanja budućih povrata.
+
+&lt;br&gt;
+&lt;br&gt;
+##### Područje 
+
+- kvantitativne financije u širem smislu
+&lt;br&gt;
+- modeliranje i predviđanje povrata na dioničkim tržištima u užem smislu 
+&lt;br&gt;
+- područje istraživanje se poklapa s empirijskim vrednovanjem imovine (*empirical assets pricing*)
+
+---
+layout: true
+# Problem
+
+---
+&lt;br&gt;
+- tradicionalno korištene statističke metode (vremenske serije)
+&lt;br&gt;&lt;br&gt;
+- [porastom količine dostupnih podataka](https://academic.oup.com/rfs/article/34/7/3213/6210658) i računalnih kapaciteta sve je više zastupljena metodologija **strojnog učenja**
+&lt;br&gt;&lt;br&gt;
+- algoritamsko trgovanje dominira
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&gt; **Kako primjeniti metodologiju strojnog učenja za predviđanje ishoda na dioničkim tržištima?**
+
+
+---
+class: inverse, middle
+layout: false
+# LITERATURA
+---
+layout: true
+# Teorijski okvir
+
+---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- koncept efikasnog tržišta -&gt; nemoguća predikcija
+&lt;br&gt;
+&lt;br&gt;
+- tržišne neefikasnosti 
+&lt;br&gt;
+&lt;br&gt;
+- tržišta nisu potpuno efikasna -&gt; predikcija moguća
+&lt;br&gt;
+&lt;br&gt;
+- tradicionalno: tehnički vs fundamentalni indikatori 
+&lt;br&gt;
+&lt;br&gt;
+- novo: veliki podatci i alternativni pokazatelji 
+
+
+---
+layout: true
+# Metodologija
+
+---
+&lt;br&gt;
+&lt;br&gt;
+- empirijsko vrednovanje imovine bazirano na statističkoj paradigmi
+&lt;br&gt;
+&lt;br&gt;
+- standardno korištene prostorne regresije i vremenske serije
+&lt;br&gt;
+&lt;br&gt;
+- predikcija je primarno problem za strojno učenja
+&lt;br&gt;
+&lt;br&gt;
+- specifična svojstva financijskih serija + veliki podatci
+&lt;br&gt;
+&lt;br&gt;
+- primjena metodologije strojnog učenja
+&lt;br&gt;
+&lt;br&gt;
+- kako kalibrirati segmente metodologije strojnog učenja
+
+
+---
+class: inverse, middle
+layout: false
+# ISTRAŽIVAČKA PITANJA I CILJEVI
+---
+layout: true
+# Istraživačka pitanja
+
+---
+&lt;br&gt;
+- Na koji je način prilagoditi zavisnu varijablu kako bi se postigao bolji predikcijski rezultat? 
+&lt;br&gt;
+&lt;br&gt;
+- Na koji način prilagoditi i obraditi nezavisne varijable (inpute) sustavu strojnog učenja za postizanje boljeg predikcijskog ishoda?
+&lt;br&gt;
+&lt;br&gt;
+- Koje varijable (indikatori) imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli?
+&lt;br&gt;
+&lt;br&gt;
+- Koje su prednosti i nedostatci uvođenja alternativnih zavisnih varijabli (npr. tekst/sentiment)?
+&lt;br&gt;
+&lt;br&gt;
+- Kakve su implikacije (automatskih) ML sustava za kvantitativnu metodologiju u financijama i ekonometriji?
+
+---
+layout: true
+# Istraživački ciljevi
+---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+- Utvrditi karakteristike metodologije strojnog učenja (ML) u predikciji ishoda na dioničkim tržištima.
+&lt;br&gt;&lt;br&gt;
+- Ispitati važnost različitih algoritamskih segmenata u procesu kalibriranja ML algoritma.
+&lt;br&gt;&lt;br&gt;
+- Istražiti predikcijsku sposobnost ML metodologije u predikciji ishoda na dioničkim tržištima.
+&lt;br&gt;&lt;br&gt;
+- Definirati predikcijsku sposobnost metodologije strojnog učenja s obzirom na ključne segmente algoritamskog kanala.
+&lt;br&gt;
+
+---
+layout: true
+# Aplikativni ciljevi
+
+---
+&lt;br&gt;
+&lt;br&gt;
+- Primjeniti metodologiju strojnog učenja u svrhu procjene trendova na dioničkim tržištima.
+&lt;br&gt;&lt;br&gt;
+- Definirati ključne elemente sustava strojnog učenja i funkcionalno ih uklopiti u algoritamski sustav. 
+&lt;br&gt;&lt;br&gt;
+- Analizom predikcijske sposobnosti  strojnog učenja ocijeniti relativnu važnost ulaznih
+inputa, predprocesnih operacija i izbora modela u algoritamskom kanalu.
+&lt;br&gt;&lt;br&gt;
+- Obogatiti metodološki okvir strojnog učenja predloženom metodologijom i proširiti područje primjene automatskog strojnog učenja na kontekst financijskog investiranja.
+&lt;br&gt;
+
+---
+class: inverse, middle
+layout: false
+# HIPOTEZE
+---
+layout: true
+# H1
+---
+&lt;br&gt;
+&lt;br&gt;
+
+&gt; H1: *Sampling barova* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
+
+
+
+&lt;br&gt;
+- Smanjenje redova! Da li su određeni dijelovi uzorka bolji nego puni uzorak?
+&lt;br&gt;&lt;br&gt;
+- Specifičnosti financijskih vremenskih serija?
+&lt;br&gt;&lt;br&gt;
+- Implikacije za EMH!
+&lt;br&gt;
+
+
+.footnote[[*] Doprinos na osnovi točke 1.]
+
+---
+layout: true
+# H2
+---
+&lt;br&gt;
+&lt;br&gt;
+&gt; H2: Smanjivanje dimenzionalnosti prostora uzorka izvlačenjem glavnih kompenenti iz uzorka poboljšava predikcijsku točnost modela.
+
+&lt;br&gt;
+- Smanjenje kolona!
+&lt;br&gt;&lt;br&gt;
+- Koliko je Big Data i obilje podataka informacijski vrijedno?
+&lt;br&gt;&lt;br&gt;
+- Koji su to bitni podatci?
+&lt;br&gt;&lt;br&gt;
+- Koje metode koristiti za samanjenje dimenzionalnosti?
+&lt;br&gt;&lt;br&gt;
+
+
+.footnote[[*] Doprinos na osnovi točke 1.]
+
+---
+layout: true
+# H3
+---
+&lt;br&gt;
+&lt;br&gt;
+&gt; H3: Prediktori izvedeni iz transkripata koji se nalaze 8-k objavama sadrže značajne informacije i njihova primjena poboljšava točnost predviđanja u odnosu na isti model koji koristi samo tržišne i fundamentalne indikatore.
+
+&lt;br&gt;
+- Alternativne varijable!
+&lt;br&gt;&lt;br&gt;
+- Puno tekstualnih izvora je potencijalno interesantno. Tekstovi iz 8k objava?
+&lt;br&gt;&lt;br&gt;
+- Koji aspekti takvih tekstova su informacijski vrijedni? U kojem vremenskom periodu su relevantni?
+&lt;br&gt;&lt;br&gt;
+- Na koji način prilagoditi tekst (sentiment, *vector embedding*)? 
+
+.footnote[[*] Doprinos na osnovi točke 1.]
+
+---
+layout: true
+# H4
+---
+&lt;br&gt;
+&lt;br&gt;
+&gt; H4:Ensemble pristup (kombinacija pojedinačnih predikcija) daje bolje predikcijske rezultate od pojedinačnih ML modela.
+
+&lt;br&gt;&lt;br&gt;
+- Da li je bolja predikcija jednog ili prosjeka više modela?
+&lt;br&gt;&lt;br&gt;
+- Koji je najbolji model? Postoji li takav ili je to ovisno o kontekstu?
+
+&lt;br&gt;
+.footnote[[*] Doprinos na osnovi točke 2.]
+
+
+---
+layout: true
+# H5
+---
+&lt;br&gt;
+&lt;br&gt;
+&gt; H5:Automatski model sa automatiziranim "preprocesuiranjem" i modeliranjem daje bolje rezultate od primjene standardnih modela strojnog ucenja bez preprocesuirnaja.
+
+&lt;br&gt;&lt;br&gt;
+- 
+&lt;br&gt;&lt;br&gt;
+-
+
+
+&lt;br&gt;&lt;br&gt;
+.footnote[[*] Doprinos na osnovi točke 3.]
+
+---
+class: inverse, middle
+layout: false
+# ZNANSTVENI DOPRINOS 
+---
+
+layout:true
+# Doprinos
+---
+&lt;br&gt;
+
+&gt; Doprinos u području kvantititativnih financija (financijske ekonometrije) za primjenu metodologije strojnog učenja u predviđanju ishoda na dioničkim tržištima.
+
+&lt;br&gt;
+#### **DOPRINOS NA POLJU**:
+
+1. Definiranja i formulacija značajnih i novih (zavisnih) varijabli (pokazatelja).
+&lt;br&gt;&lt;br&gt;
+
+2. Smanjenja predikcijske pogreške u predviđanju  ishoda na tržištima kapitala.
+&lt;br&gt;&lt;br&gt;
+
+3. Proširenje i nadogradnja ekonometrijske metodologije i alata u vidu primjene sustava strojnog učenja.
+&lt;br&gt;
+
+
+.footnote[[*]Vidi [rad](https://finance.fbv.kit.edu/rd_download/Machine%20Learning%20Methods%20in%20Finance.pdf) za pregled doprinosa literaturi.]
+
+---
+class: inverse, middle
+layout: false
+# REFERENCE
+---
+layout: true
+# Knjige
+
+---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+[Machine Learning in Finance](https://link.springer.com/book/10.1007/978-3-030-41068-1)
+&lt;br&gt;
+&lt;br&gt;
+[Advances in Financial Machine Learning](https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086)
+&lt;br&gt;
+&lt;br&gt;
+[Machine Learning in Asset Pricing](https://press.princeton.edu/books/hardcover/9780691218700/machine-learning-in-asset-pricing)
+&lt;br&gt;
+&lt;br&gt;
+[Machine Learning for Algorithmic Trading](https://www.packtpub.com/product/machine-learning-for-algorithmic-trading-second-edition/9781839217715)
+&lt;br&gt;
+&lt;br&gt;
+[Automated Machine Learning: Methods, Systems, Challenges](https://link.springer.com/book/10.1007/978-3-030-05318-5)
+&lt;br&gt;
+&lt;br&gt;
+[Automated Machine Learning for Business](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780190941659.001.0001/oso-9780190941659)
+
+---
+layout: true
+# Članci
+
+---
+
+[Machine Learning Methods in Finance: Recent Applications and Prospects](https://finance.fbv.kit.edu/rd_download/Machine%20Learning%20Methods%20in%20Finance.pdf)
+
+[Trends and Applications of Machine Learning in Quantitative Finance](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3397005)
+
+[Text as Data](https://web.stanford.edu/~gentzkow/research/text-as-data.pdf)
+
+[An Empirical Study of Machine Learning Algorithms for Stock Daily Trading Strategy](https://www.hindawi.com/journals/mpe/2019/7816154/)
+
+[Stock Market Prediction Using Machine Learning Techniques:A Decade Survey on Methodologies, Recent Developments, and Future Directions](https://www.mdpi.com/2079-9292/10/21/2717)
+
+[Predicting Stock Market Returns with Machine Learning](https://mendoza.nd.edu/wp-content/uploads/2019/07/2018-Alberto-Rossi-Fall-Seminar-Paper-1-Stock-Market-Returns.pdf)
+
+[Diverging Roads: Theory-Based vs. Machine Learning-Implied Stock Risk Premia](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3536835)
+
+[Market Efficiency in the Age of Big Data](https://www.nber.org/papers/w26586)
+
+---
+class: inverse, middle
+layout:false
+# Hvala na pozornosti!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
