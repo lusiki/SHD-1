@@ -1,0 +1,293 @@
+---
+title: "METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA"
+author: "Joško Marić"
+date: '23 11 2021'
+output: html_document
+---
+
+
+## Istraživački problem i istraživačka pitanja
+
+
+Područje ove doktorske disertacije su kvantitativne financije  i financijska ekonometrija u širem smislu, odnosno **modeliranje i predviđanje povrata na dioničkim tržištima metodologijom strojnog učenja** u užem smislu. Ovako definirano područje istraživanja pozicionira disertaciju unutar literature o empirijskom vrednovanju imovine (). Predmet istraživanja je predprocesno modeliranje, uglađivanje i optimizacija segmenata metodologije strojnog učenja s ciljem povećanja predikcijske sposobnosti prinosa na dioničkim tržištima. Budući da primjena metodologije strojnog učenja predstavlja tehnološku granicu u financijsko-investicijskom sektoru i atraktivan metodološki pristup u znanstvenim istraživanjima iz ekonomike i financija, ova se tema nalazi u središtu zanimanja znanstvenih i stručnih krugova. Metodologiija strojnog učenja je osnova za sve šire zastupljen algoritamski pristup investiranju u kojemu je ljudska ekspertiza djelomično ili potpuno zamjenjena strojem (računalom). Na strani znanstveno-istraživačke metodologije u području financija, strojno učenje predstavlja perspektivan metodološki pristup jer omogućava modeliranje visokodimenzionalnih podataka uz istovremeno uvažavanje specifičnosti financijskih vremenskih serija.
+
+Teorijska okosnica za predviđanje kretanja na dioničkim tržištima je koncept efikasnog tržišta (ET). Prema konceptu ET, trenutna cijena dionice odražava sve relevantne informacije racionalnih investitora  o tvrtki i jednaka je njenoj stvarnoj vrijednosti vrijednosti (Fama, 1970). Pošto cijena dionice uvijek odražava pravu vrijednost, predikcija cijene dionice u budućnosti nije moguća jer ovisi o informacijama koje nisu poznate u sadašnjem trenutku. Kada nove informacije postanu poznate, cijena će se sukladno tome prilagoditi (Urquhart and Hudson, 2013). Istraživanja ograničene racionalnosti (Kahneman and Tversky, 1979), prekomjerene sigurnosti (Gervais and Odean, 2001), informacijske ograničenosti (Grossman and Stiglitz, 1980) i dr. su pokazala da investitori nisu nužno racionalni implicirajući postojanje tržišnih neefiksnosti. To je motiviralo alternativna teoretska objašnjenja tržišnog mehanizma koja dozvoljavaju mogućnost predviđanja tržišnih kretanja, primjerice koncept adaptivnih tržišta (Lo, 2017) koji polazi od pretpostavke da su investitori istovremeno racionalni i iracionalni te se kao takvi prilagođavaju promjenjivoj okolini. Razdoblja prilagodbe karakteriziraju tržišne neefikasnosti koje omogućuju predviđanje tržišnih kretanja na korekcijskoj putanji do stacionarnog stanja u kojem vrijede zakonitosti ET. 
+
+U najširem je smislu moguće razlikovati dva investicijska pristupa na dioničkim tržištima. Prvi pristup se zasniva na informacijama iz povijesnih cijena, trgovanih volumena i likvidnosti te na osnovi njih nastoji identificirati signale o cijenama dionice u budućnosti. Popularnost toga pristupa se zasniva na širokoj dostupnosti tehničkih indikatora i jednostavnosti njihove interpretacije. Drugi pristup koristi fundamentalne pokazatelje poslovanja i vrijednosti tvrtke kako bi procijenio njenu sposobnost da generira ekonomsku vrijednost i shodno tome donosi investicijske odluke. Osim bilančanih pokazatelja, fundamentalni pristup u širem smislu uzima u obzir i druge pokazatelje makroekonomske, financijske i monetarne okoline. **Moderne investicijske strategije** su najčešće bazirane na kombinacijama navedenih pristupa uz uključivanje mnoštva dodatnih pokazatelja poput medijskih trendova, sentimenta na društvenim medijima, menadžerskim izvještajima o poslovanju i dr. Korištenje takvih, "alternativnih" izvora informacija zahtijeva specifične vještine prikupljanja i obrade, napredniju metodologiju i tehnologiju modeliranja te ekspertno znanje interpretacije rezultata kako bi se iz njih izvukli korisni signali za predikciju.
+
+Na metodološkoj je strani u predviđanju ishoda na dioničkim tržištima tradicionalno korišten široki spektar metoda. Najjednostavnije metode se odnose na vizualnu interpretaciju tehničkih indikatora, a u kvantitativnim financijama je tradicionalno zastupljena statistička paradigma koja uključuje metodologiju prostorne regresijske analize i vremenskih serija. U okviru prostorne regresijske analize se procijenjuje relativna važnost faktora koji utječu na povrat u prostornom presijeku dionica ili financijske imovine (Fama and French, 2008; Lewellen, 2015). Metodologija vremenskih serija koristi signale iz povijesnih podataka o trgovanju i nastoji ih objasniti tehnikama univarijatnog modeliranja ili složenijim multivarijatnim tehnikama na osnovi šireg spektra ekonomskih indikatora (vidi Koijen and Nieuwerburgh, 2011; Rapach and Zhou, 2013). Porastom količine dostupnih podataka, računalnih kapaciteta i napretkom informatičke tehnologije, **algoritamska paradigma zasnovana na metodologiji strojnog učenja** (Cavalcante et al., 2016; Nassirtoussi et al., 2014; Atsalakis and Valavanis, 2009) dobiva na važnosti. Algoritamska paradigma se odnosi na automatizirane ili djelomično automatizirane sustave za trgovanje koji su sposobni procesuirati široki spektar input podataka i (semi)autonomno donositi investicijske odluke.
+
+Ova disertacija polazi od algoritamske paradigme u predviđanju ishoda na dioničkim tržištima i u okviru nje nastoji dati odgovore na sljedeća pitanja: Koji su bitni elementi sustava strojnog učenja za predikciju ishoda na dioničkim tržištima? Kakva je relevantnost tehničkih, fundamentalnih i alternativnih indikatora? Koji indikatori imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli? Na koji je način potrebno prilagoditi i obraditi inpute sustavu strojnog učenja za postizanje boljeg predikcijskog ishoda? Na koji je način potrebno prilagoditi ciljanu predikcijsku varijablu kako bi se postigao bolji predikcijski rezultat? Koje su prednosti uvođenja alternativnih indikatora zasnovanih na tekstualnim podatcima? Kakve su implikacije (automatskih) agloritamskih sustava za kvantitativnu metodologiju u financijama i ekonometriji? Kakve su implikacije agloritamskih investicijskih sustava za poslovno-financijski sektor? 
+
+
+<!-- Navedeni aspekti metodologije strojnog učenja će se analizirati u okviru *sustava automatskog strojnog učenja (aML)* čiji razvoj prestavlja aplikativnu dimenziju ovog istraživanja  -->
+
+<!-- Pošto metodologija strojnog učenja predstavlja tehnički kompleksan sustav, najčešće ograničen na primjene unutar ekspertne domene, u disertaciji se ova metodologija analizira u okviru sustava automatskog strojnog učenja koji značajnoj mjeri autonomno kalibrira investicijski proces uz ljudski input. Kroz primjenu sustava automatskog strojnog učenja način postiže dvojak rezultat. Prvo, omogućuje se istraživanje ključnih elemenata metodologije strojnog učenja na objektivan i reproducibilan način. Drugo, razvija se specifična metodološka varijanta strojnog učenja koja ima primjenu izvan ekspertne domene. -->
+
+<!-- U sustavu investicijskog algoritma je bitno uvažiti niz stadija modeliranja poput izbora podataka, prilagodbe ulaznih inputa i varijabli, izbor i optimizacija modela... -->
+
+## Predhodna istraživanja
+
+
+U analiz ishoda na financijskim tržištima dominira statistička paradigma. Statističke tehnike kakakterizriraju brojna ograničenja poput nemogućnosti modeliranja velikog broja potencijalno relevantnih prediktora tržišnih povrata, korelacija nezavisnih varijabli, nedefiniranost funkcionalne forme, nelinearnosti u odnosu zavisnih i nezavisne varijable i dr. Zbog toga na važnosti dobiva metodologija strojnog učenja (Khandani et al., 2010; Rapach et al., 2013; Butaru et al.,2016; Harvey and Liu, 2016; Giglio and Xiu, 2016; Kelly et al., 2019; Kozak et al.,2019; Freyberger et al.,2019). Prednost strojnog učenjau predikciji financijskih tržišta se očituje u: 1) mogućnosti efikasne redukcije dimenzionalnosti velikog prostora input varijabli, 2) uvažavanju nelinearnosti bez eksplicitne specifikacije funkcionalne forme, 3) višoj predikcijskoj sposobnosti, 4) visokoj predikcijskoj preciznosti kada se koriste standardni prediktori puput cijene, likvidnosti i volumena te  5) mogućnosti korištenja novih (alternativnih) prediktora iz raznovrsnih izvora velikih podataka. Uz to metodologija strojnog učenja omogućava uvažavanje specifičnosti financijskih vremenskih serija poput nepovoljnog omjera signala i šuma, nestacionarnosti, promjene režima i dr.
+
+Osim navedenih metodoloških aspekata, pristup strojnog učenja dobiva na popularnosti zbog povećanja količine i heterogenosti dostupnih podataka, brzog napretka u računalnoj tehnologiji koja omogućava provedbu sve složenijih algoritama i rastuće uloge algoritamske trgovine na financijskim tržištima. Navedene prednosti metodologije strojnog učenja prati kompleksan metodološki okvir za koji trenutno ne postoji jasan i nedvosmislen konsenzus oko optimalnih principa, indikatora i metoda u kontekstu analize dioničkih tržišta. Standardni segmenti metodologije strojnog učenja u predviđanju ishoda na dioničkim tržištima uključuju nekoliko važnih etapa pri čemu svaka pojedinačna može sadržavati jednu ili više specifičnih procedura. Proces započinje **pripremom podataka** koja uključuje pribavu i predprocesne prilagodbe varijabli. Predprocesne operacije se najčešće odnose na kontrolne varijable i uključuju izbor, smanjenje dimenzionalnosti i prilagodbu reprezentacijskog oblika. Nakon pripreme se vrši **izbor i specifikacija modela** ovisno o vrsti predikcijskog problema (numerički/klasifikacijski). Nakon toga slijedi **treniranje algoritma** i **procjena predikcije**, a ukoliko je predikcijski rezultat zadovoljavajući, pristupa se **implementaciji investicijske strategije** 
+
+Priprema podataka uključuje izbor podataka za analizu i ovisi o investicijskom pristupu (tehnička i fundamentalna analiza) te dostupnosti podataka i složenosti njihove obrade. Najviše su zastupljeni tehnički indikatori (Calcavante et al, 2016) poput jednostavnog pomičnog prosjeka, indeksa relativne snage, stope promjene, stohastičkih oscilatora i prosječnih raspona zbog lakoće prikupljanja i dostupnosti na višim vremenskim frekvencijama poput minutne ili više. Najčešće korišteni fundamentalni indikatori se odonose na bilančane, makroekonomske i financijske pokazatelje koji često nisu dostupni na frekvencijama nižim od kvartalnih i zahtijevaju posebnu prilagodbu. Osim standardnih fundamentalnih indikatora, sve je ćešće korištenje alternativnih izvora podataka poput dnevnih vijesti, mikroblogova, društvenih medija koji se baziraju na tekstualnim podatcima. Takvi podatci zahtijevaju specifičnu metodologiju obrade i prilagodbe prije nego što mogu biti proslijeđeni kao input u model strojnog učenja.  
+
+Osim izbora podataka, etapa pripreme podataka uključuje niz predprocesnih operacija poput čišćenja i uređivanja podataka, standardizacije i prilagodbe. Predprocesne operacije nad zavisnim i nezavisnim varijablama povećavaju predikcijsku sposobnost metodologije strojnog učenja. Faza pripreme podataka uključuje i selekciju ulaznih kontrolnih varijabli kako bi se smanjio broj nepotrebnih atributa u modelu i izbjeglo "prokletstvo dimenzionalnosti" (Bellman,1961). Selekcija ulaznih varijabli uključuje pregled i uklanjanje manje relevantnih nezavisnih varijabli prema zadanom kriteriju, pri čemu je najčešće korištna metoda glavnih komponenti (PCA) i njene varijacije (fuzzy PCA, kernel PCA ) jer može znatno smanjiti predikcijsku pogrešku (Zhong i Enke, 2017).
+
+Nakon pripreme podataka, sustav strojnog učenja zahtijeva specifikaciju preferiranog modela. U najširem se smislu radi o modelima nadziranog i nenadziranog strojnog učenja, a njihov izbor ovisi o specifikacijskoj formi (numerički/klasifikacijski) modela za predviđanje. Vrlo su zastupljeni algoritmi *umjetnih neuralnih mreža* (Guresen et al., 2011; Porshnev et al,2015;Sharma et al,2021; Ganser et al,2021; Ticknor et al, 2013 ) koji koriste multidimenzionalne transformacije inputa kako bi proizveli pojednostavljenu reprezentaciju u formi predikcijskog ishoda. Algoritmi umjetnih neuralnih mreža su se pokazali kao modeli sa visokom predikcijskom preciznošću. U klasifikacijskim specifikacija su najčešće korišteni *support vector machine* (Lugmayr et al, 2012; Hagenau et al., 2012; Porshnevet al, 2015;Bustos et al, 2017; Akhtar et al, 2020 ) algoritmi i *naive Bayes* (Ghanavati et al,2016; Ihlayyel et al, 2018; Milosević. 2016) koji se zasniva na Bayesovom teoremu vjerojatnosti. Genetički algoritmi (Tan et al., 2007; Venugopal et al., 2009; Das et al., 2018) koji koriste koncept prirodne slekcije u optimizacijskoj proceduri izbora najboljeg riješenje su također korišteni. Dio autora je koristio *fuzzy algoritme* i njihove varijacije. *Duboke neuralne mreže* i njihove varijacije poput *convolutional neural networks*, *long-short term memory* i *deep belief networks* su također korištene u predikcijskim modelima kao unaprijeđenje standardnih neuralnih mreža jer dozvoljavaju veći broj skrivenih slojeva i prilagođene su za nelinearne funkcionalne forme. Za modeliranje i odnosa između zavisne i nezavisnih varijabli te procjenu važnosti pojedinih faktora su korišteni i regresijski algoritmi i njihove varijacije poput *decision tree regresije*, *logističke regresije*, *ensemble regresije*. Manji dio radova koristi hibridne pristupe (Inthachot et al, 2016; Rajput et al., 2016; Chandar et al, 2019) koji predstavljaju kombinaciju prethodno navedenih algoritama i često rezultiraju poboljšanjima u predikcijskoj sposobnosti.
+
+Poslije specifikacije algoritma je potrebno provesti treniniranje algoritma na dijelu uzorka kako bi se mogle procijeniti performanse modela na dijelu uzorka koji nije bio uključen u fazi treninga. Stohastička priroda financijskih serija zahtijeva da se ovom koraku posveti posebna pažnja pa su često korištene metode poput križne validacije (*cross-validation*) u kojima se trening podatci dijele na više ešalona nad kojima se procedura treninga vrši iterativno. Na taj se način smanjuje *overfitting* problem koji opterećuje kvalitetu procjene. Osim križne validacije, smanjenje *overfitting* problema je moguće provesti regularizacijskim tehnikama koje ponderiraju inpute i tako vrše ravnomjerniju distribuciju njihove važnosti u prostoru zavisnih varijabli. Treniranje modela prethodi fazi testiranja u kojoj se na osnovi različitih kriterija procijenjuje pojedinačna ili relativna prediktivna sposobnost modela. Tu je korišten niz pokazatelja od kojih su najčešći rezidualna standardna pogreška, područje ispod krivulje, informacijski kriteriji, R2, preciznost, povrat na investiciju i drugi.
+
+Zadnja faza uključuje implementaciju investicijske strategije. Implementacija uvijek započinje backtestingom *strategije*. Na test skupu (*holdout* ) se simulira trgovanje vrijednosnim papirima (npr. dionicama) na povijesnim trgovinskim podacima. Razvoj backtesting algoritma je vrlo složen proces, pa se u praksi često koriste gotova okruženja za backtesting. Ovo je vrlo dinamično područje, pa se vrlo brzo razvijaju nova rješenja. Neki od poznatih okruženja su Quantconnet, backtrader i blankly. Cilj je koristiti sustav koji što vjernije oslikava živo trgovanje. To se prvenstvneo odnosi na transakcijske troškove trgovanja. Pri tome transakcijski troškovi ne uključuju samo provizije, već i tržišni utjecaj, *slippage* i problem *overfitinga*. Nakon provedenog backtesta, trgovinski algoritmi prolaze zadnju provjeru na papirnom trgovanju, odnosno simuliranom živom trgovanju. Tek kada su svi ovi koraci potvrdili isplativost strategije, dolazi do njezine implementacije u živo trgovanje.  
+
+
+## Ciljevi istraživanja 
+
+Na osnovi prethodno definiranog predmeta istraživanja proizlazi i osnovni cilj ovoga istraživanja:
+
+Ispitati i utvrditi **ulogu metodologije strojnog učenja u predviđanju ishoda na dioničkim tržištima**, definirati ključne karakteristike metodološkog sustava te empirijski testirati predikcijsku sposobnost ove metodologije s obzirom na različito kalibrirane elemente algoritma.
+
+**Glavni cilj** sastoji se od sljedećih znanstvenih i aplikativnih ciljeva koji će se nastojati
+realizirati u ovoj disertaciji:
+<br>
+<br>
+1. Utvrditi karakteristike metodologije strojnog učenja za primjenu u analizi dioničkih tržišta.
+<br><br>
+2. Ispitati važnost različitih algoritamskih segmenata u procesu optimalnog kalibriranja sustava strojnog učenja.
+<br><br>
+3. Definirati predikcijsku sposobnost metodologije strojnog učenja.
+<br><br>
+4. Definirati predikcijsku sposobnost metodologije strojnog učenja s obzirom na ključne algoritamske segmente.
+<br><br>
+Spoznaje o karakteristikama i predikcijskom potencijalu metodologije strojnog učenja ključne su za investitore ali i stručnjake koji rade na primjeni i razvoju kvantitativne metodologije u području financija i financijske ekonometrije. Pored naglaska na teoriju i proširenje znanstvenih spoznaja vezanih za predmet istraživanja, značaj i potencijalna primjenjivost ovoga rada ogledaju se u realizaciji sljedećih **aplikativnih ciljeva**:
+<br>
+<br>
+1. Ispitati mogućnost primjene metodologije strojnog učenja u svrhu procjene trendova na dioničkim tržištima.
+<br>
+2. Definirati ključne elemente sustava strojnog učenja i funkcionalno ih uklopiti u algoritamski sustav. 
+<br>
+2. Analizom predikcijske sposobnosti  strojnog učenja ocijeniti relativnu važnost inputa, predprocesnih operacija, i izbora modela.
+<br>
+3. Obogatiti metodološki okvir strojnog učenja predloženom metodologijom i proširiti područje primjene automatskog strojnog učenja na kontekst financijskog investiranja.
+<br>
+
+## Hipoteze
+
+S obzirom na opisani predmet te probleme i ciljeve istraživanja, u ovom se dijelu razrađuju testirane hipoteze i njihova pripadajuća argumentacija.
+
+
+<!-- Istraživanje . Prvi je u litearaturi poznat kao PEAD (*post earnings accouncments drift*) i označuje pozitivne abnormalne povrate dionica tvrtki koje su ostvarile rast zarada znatno iznad očekivanog. Očekivanja  se odnose na predviđanja analitičara ili procijene na temelju poslovanja u prošlosti. -->
+
+<!-- Cilj rada je proširiti postojeću grupu istraživanja, koja je analizirala ovaj fenomen, na način da se ispita važnost pojedinig preprocesnih radnji i izbora metoda strojnog učenja za predikciju. -->
+
+<!-- U istraživanju će se identificirati najvažnije input varijable za predikciju, ispitati utjecaj ozančavanje zavisne varijable na predikciju i važnost smanjenja dimenzionalnos modela. -->
+
+
+<!-- Drugi fenomen se odnosi na predikciju povrata pomoću visokofrekventnih podataka (HFT). Prednosti visokofrekventnih (unutardnevnih) podataka su veličina uzorka, identifikacija signala iz izvornih *tick* serija dolaze uz znatnu dozu, mikrostrukturarnog šuma.  -->
+
+<!-- Doktorski rad nije usmjeren samo na primjenu metoda strojnog učenja na predikciju abnormalnih povrata nakon objave preliminarnih rezultata (PEAD) i unutardnevnih povrata (HFT), već na i na testiranje važnosti značajki financijskih serija na predviđanje.  -->
+
+<!-- Te značajke uključuju strukturne lomove, visokodimenzionalnost prostora uzorka, niski omker signala i prinosa, označavanje zavisne varijable i drugo. -->
+
+
+Predikcijska sposobnost metodologije strojnog učenja je općenito veća što je veći uzorak za predviđanje zavisne varijable. Financijske vremenske serije karakterizira niski odnos šuma i signala, a u stacionarnom stanju tržišta vrijedi koncept ET prema kojem predikcija na tržištu nije moguća. Neefikansnosti na tržištima kapitala nastaju samo u razdoblujima prilagodbe prema stacionarnom stanju pa je mogućnost predikcije tržišta samo privremena. Na osnovi toga se može pretpostaviti da veći uzorak ne dovodi nužno do bolje predikcije već da identifikacija razdoblja neefikasnosti tržišta i redukcija uzorka na takva razdoblja povećava prediktivnu sposobnost modela. Ova pretpostavka će se testirati na način da se metodama BackCUSUM filtera, CUSUM filtera i testovima eksplozivnosti vremenske serije identificira razdoblje strukturnog loma te se vremenski raspon analize ograniči samo na takve periode. Osnova za testiranje hipoteze H1 će biti visokofrekventni (unutardnevni) podaci, a hipoteza pretpostavlja da korištenje ovakve procedure poboljšava predikciju u odnosu na model koji koristi kompletni uzorak.
+
+
+<!-- i PEAD (*post earnings announcements drft*) fenomenu. PEAD fenomen predviđa abnormalne povrate (povrate iznad tržišnih povrata) za dionice tvrtki koje su iskusile iznenađujući rast zarada u 8-k formama. -->
+
+
+> H1: *Sampling barova* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
+
+Broj potencijalno relevantnih variajbli za predikciju budućih prinosa (smjerova, ishoda) vrlo je velik i nepoznat *ex ante*. U radovima koji se bavi predikcijom financijskih ishoda, podaci se najčešće dijele na tržišne podatke, fundamentalne podatke i alternativne podatke. Dok su prva i druga grupa dostupni već duže vrijeme, treća grupa podataka je doživjela značajan rast u posljednjim godinama, a razvoj tehnologije je povećao njihovu dostupnost. U takve se podatke ubrajaju nestrukturni podaci poput vijesti, tekstova sa socijalnih mreža, slika iz satelita i dr. Budući da se svaki skup podataka može transformirati i obraditi na način da predstavlja novu informaciju, broj potencijalno relevantnih varijabli za predikciju je izrazito velik. Prilagodba input podataka (uzorka) često zahtijeva stvaranje prikladne interakcije varijabli, a modeli strojnog učenja ne mogu to napraviti automatski. Pri tome kreiranje interakcija povećava uzorak za $O(n^2)$ i dovodi do potrebe smanjivanje dimenzionalnosti (*curse of dimensionality*). Smanjivanje dimenzionalnosti podataka može se izvršiti na dva način. Prvi je korištenje nenadgledanih modela strojnog učenja poput PCA, kernel PCA ili ICA. Drugi način podrazumijeva izbor manjeg broja prediktora iz skupa svih prediktora od strane analitičara. U hipotezi H2 će se performanse modela (predikcijska točnost) sa svim prediktorima uspoređivati sa performansama modela koji koriste prethodno navedene pristupe smanjenja dimenzionalnosti podataka. 
+
+U doktorskom radu se koriste dvije gupe podataka. Prva grupa podataka omogućuje testiranje hipoteza na PEAD fenomenu, dok druga grupa podataka omogućuje testiranje hipoteza na unutar dnevnim podacima (HFT). PEAD označuje fenomen rasta zarada kompanije nakon objave rezultata o financijskim izvještajima. Kompanije u SAD-u, osim kvaratlnih i godišnjih financijskih izvještaja poznatim kao 10-K i 10-Q forme, redovito objavljuju i neplanirane korporativne događaje u obliku 8-K forme. Izvještaji o korporativnim i materijalnim događajima relevantim za poslovanje kompanija (8-K) se učitavaju u EDGAR bazu podataka. Iako se 8-K forme mogu sadržavati razne događaji, za ovu hipoteze (a i naredne hipoteze) je relevantan samo događaj objave preliminarnih rezultata o zaradama kompanija, poznatim kao *earning announcements*. Osim objave ključnih indikatora poslovanja za prethodni kvartal (zarade, prihodi), objavu rezultata najčešće prati i konferencijski poziv (*conference call transcripts* ili *earning call transcripts*), u kojem odgovorne osobe dodatno objašnjavaju objavljene rezultate, uključujući i odgovore na pitanja.
+
+Brojni radovi su istraživali kretanje cijene dionica nakon objave preliminarnih rezultata o zaradama kompanija. Radovi su potvrdili da postoji trend (*drift*) rasta cijena u smjeru iznenađenja, pri čemu je iznenađenje jednako razlici ostvarenih (tekućih, aktualnih) zarada i procjenjenih zarada (Fink, 2021), dok su procjene najčešće prosjek očekivnaja analitičara koji prate predmetnu dionicu. 
+
+Kao primarni izvor su korišteni podaci s DATA API servisa FMP CLOUD PREP. Sa ove stranice su prvo preuzeti podaci o objavljenim i procjenjenim zaradama svih kompanija u SAD-u od cca početka 2014 godine. Ovi podaci će se nadopuniti podacima o zaradama sa poznate stranice investing.com, te će se u konačnici zadržati samo presjek podataka iz oba izbora, odnosno podaci koji su vrlo slični u obje baze. Također su s FMP-a preuzeti svi podaci s konferencija (riječ je o tekstualnim podacima razgovora). Uz ove temeljne podatke preuzeti su i dnevni podaci o cijenama (OHLCV podaci).
+
+Osim PEAD fenomenta, kod testiranja hipoteza će se koristiti unutardnevni tržišni podaci. Pri tome će se koristi *tick* podaci iz Finam baze podataka i minutni podaci sa već spomenutog FMO Clud API-a. Dakle, kod HFT fenomena, koristi će se isključivo tržišni podaci visoke frekventnosti.
+
+Važno je definirati modele strojnog učenja koji će se koristiti kod testiranja hipoteza. U dosadašnjim istraživanjima je testiran veliki broj različitih modela (Bagnara, 2021), u ovom doktorskom radu se koriste tri modela iz familije modela stabla odlučivanja i tri modela iz familije modela neuronskih mreža. Prvu grupu čine *random forest* model, XGBOOST i BART model. Drugu grupu čine FFNN, LSTM i TANET model. 
+
+> H2: Smanjivanje dimenzionalnosti prostora uzorka izvlačenjem glavnih kompenenti iz uzorka poboljšava predikcijsku točnost modela.
+
+
+Korištenje tehničkih i fundamentalnih indikatora je relativno jednostavno zbog njihove široke dostupnosti i jednostavne obrade. Korištenje alternativnih podataka predstavlja značajan izazov zbog ograničenog pristupa povijesnim podatcima, visokim zahtjevima radne memorije,hardwera i potrebnim specijalističkim vještinama obrade po osnovi njihovog nestrukturiranog formata. Valja spomenuti i da alternativni podatci podaci ne dolaze u sinkroniziranim vremenskim frekvencijama što otežava njihovo povezivanje sa prediktorima od interesa. Navedene karakteristike alternativnih podataka ukazuju na znatno veću složenost njihove obrade. Korištenje takvih podataka u svrhu predikcije dioničkih ishoda mora opravdati troškove njihove manipulacije u terminima povećanog predikcijskog rezultata. U ovom istraživanju će se koristiti dvije vrste alternativnih podataka. Prvu grupu čine tekstualni transkripti koji se pojavljuju u 8-k obrascima u EDGAR bazi podataka. Riječ je o formama koje se objavljuju prije službene objave financijskih izvještaja. Dva su ključna podataka u 8-k obrascima: ostvarene zarade za tekući kvartal i transkripti koji sadrže govor menadžmenta kompanije te pitanja i odgovore o poslovanju kompanije. Hipoteza pretpostavlja da će prediktori izvedeni iz tekstualnih podataka biti značajni za predikciju zavisne varijable i da će točnost predviđanja biti veća nego u modelima koje ne koriste prediktore na temelju tekstualnih podataka.
+
+> H3: Prediktori izvedeni iz transkripata koji se nalaze 8-k objavama sadrže značajne informacije i njihova primjena poboljšava točnost predviđanja u odnosu na isti model koji koristi samo tržišne i fundamentalne indikatore.
+
+Hipoteze H1 do H3 impliciraju kompleksnost predviđanja dioničkih povrata. Kompleksnost se očituje u velikom broju parametara i input varijabli koji utječu na spososbnost predviđanja. Izbor parametara modela i pojedinih koraka u predprocesnom dijelu modeliranja nije poznat *ex ante*. Primjerice, nije moguće unaprijed znati je li bolje koristiti PCA za smanjivanje dimenzionalnosti modela, da li koristiti sve prediktore ili samo podskup prediktora. Isto tako je nemoguće unaprijed znati koji modeli daju najbolje predikcije. Dodatna kompleksnost proizlazi iz međusobne povezanosti pojedinih koraka. Na primjer, uzorkovanje pojedinih barova utječe na uglađivanje parametara pojedinih modela. Kako bi se istovremeno procijenili paramteri u predprocesnim i procesnim koracima strojnog učenja, razvit će se automatski model strojnog učenja, koji uključuje večinu koraka koje smo testirali u hipotezama i još neke dodatne elemente. 
+
+Primjena poznatih automatskih modela strojnog učenja (npr. H2o, Sklearn, mlr3) potvrđuje veliku statističku snagu ansambla pojedinačnih modela strojnog učenja. Ansambl modela predstavlja prosjek pojedinačnih predikcija. U testiranju hipoteze H4 koristiti će se isti modeli kao i u pretohdnim hipotezama (modeli stabla odlučivanja i neuronske mreže) kako bi se procijenili povrati imovine. Nakon toga se uzima jednostavni prosjek predikcija. Očekuje se da će predikcije ne temelju ansambla modela imati veću točnost predviđanja od pojedinačnih modela. Hipoteza će se primjeniti na HFT i PEAD podacima.
+
+Hipoteza H4 pretpostavlja da će razvijeni automatski model strojnog učenja, koji optimizira izbor hiperparametara u predprocesnom koraku i parametre uglađivanja modela strojnog učenja, pokazati bolji predikcijski rezultat od pojedinačnih modele u predikciji povrata financijske imovine. Osim pojedinačnih modela, kao posebni model će se koristiti njihov ansambl (prosjek). Za testiranje ove hipoteze korist će se podaci koji opisuju PEAD i HFT fenomene.
+
+
+> H4: Automatski model strojnog učenja sa optimiziranim parametrima grafa strojng učenja daje bolje prediktivne rezulatate u predikciji ishoda na dioničkim tržištima od standarnog modela strojnog učenja koji koristi pojedinačne modele.
+
+
+## Znanstveni doprinos
+
+Znanstveni doprinos u području finacijske ekonomike odnosno kvantitativnog modeliranja se postiže na tri bitne razine:
+<br>
+
+1. Definiranje i formulacija značajnih i novih (zavisnih i nezavisnih) varijabli.
+<br>
+
+Hipoteze H1 i H2 se odnose na istraživanje karakteristika prostora uzorka na strani prediktora (H1) i nezavisnih varijabli (H2). Metodologija strojnog učenja polazi od (radne) pretpostavke da veći uzorak rezultira boljim algoritamskim rezultatom. Takva pretpostavka nije nužno opravdana u kontekstu primjene metodologije strojnog učenja na predikciju ishoda na dioničkim tržištima zbog specifičnih svojstava financijskih vremenskih serija i zakonitosti tržišnog mehanizma (ET). Potvrda hipoteza implicira potrebne prilagodbe podatkovnog inputa u metodologiji strojnog učenja sa ciljem povećanja predikcijske sposobnosti modela. Predložene prilagodbe će rezultirati definiranjem novih procedura prilagodbe podatkovnog uzorka u procesu formulacije novih i značajnih varijabli u smislu smanjenja uzorka i istovremenog povećanja njegove relevantnosti. Nadalje, korištenje alternativnih izvora podataka u smislu identifikacije prediktora izvedenih iz transkripata 8-k objava predstavlja doprinos u smislu definiranja i formulacije novih varijabli. Pri tome će identifikacijske tehnike i izvedeni prediktori obogatiti i širu ekonomsku literaturu u smislu značajnih pokazatelja u procesu vrednovanja tvrtke (imovine).
+
+
+2. Smanjenje predikcijske pogreške u predviđanju ekonomskih ishoda ishoda na tržištima kapitala.
+<br>
+
+Hipoteze H1, H2 i H3 se odnose na prilagodbu podatkovnog inputa u metodologiji strojnog učenja i produbljuju razumjevanje tržišnog mehanizma. Osim toga, testiranje ovih hipoteza će omogućiti preciznije kalibriranje metodologije strojnog učenja kako bi se smanjila predikcijska pogreška. Pored kalibriranja modela na strani ulaznih podataka (H1 i H2), uvođenje novih prediktora na osnovi tekstualnih podataka i tehnika njihove identifikacije nosi potencijal dodatnog smanjenja predikcijske pogreške. 
+
+
+3. Proširenje i nadogradnja ekonometrijske metodologije i alata u smislu specijalnih ekonometrijskih aplikacija u financijama.
+<br>
+
+Znanstveni doprinos se postiže u polju ekonometrijske metodologije, odnosno primjeni metodologije strojnog učenja na specifično financijski problem predikcije ishoda na dioničkim tržištima. Standardno korištene statističke metode regresijske analize i vremenskih serija karakterizira niz ograničenja u predikciji ishoda na dioničkim tržištima pošto ne mogu na zadovoljavajući način uvažiti svojstva financijskih serija poput duge memorije, visoku razinu šuma, nestacionarnost, promjenu režima, korelaciju prediktora i dr. Pored toga, velika količina podataka generiranih na internetu, društvenim mrežama, aplikacijama i dr. potencijalno sadržava informacije značajne za predikciju dioničkih ishoda koje standardne statističke metode ne mogu procesuirati niti adekvatno uvažiti. Upravo zbog toga metodologija strojnog učenja predstavlja novu i perspektivnu paradigmu. Primjena metodologije strojnog učenja u predikciji dioničkih ishoda je još uvijek u povojima no standardne etape kanala strojnog učenja već su definirane i uključuju niz operacija poput prilagodbe podataka, izbora i specifikacije modela, treniranja i testiranja te implementacije investicijske strategije. Hipoteza H4 implicira razvoj sustava automatskog strojnog učenja koji bi navedene etape kalibrirao autonomno i na taj način omogućio jednostavnije i objektivnije korištenje metodologije strojnog učenja u financijskoj ekonometriji proširivši ju novim i inovativnim metodološkim sustavom.
+
+
+## Bibliografija
+
+Urquhart, Andrew & Hudson, Robert. (2013). Efficient or adaptive markets? Evidence from major stock markets using very long historic data. International Review of Financial Analysis. 28. 130–142. 10.1016/j.irfa.2013.03.005. 
+
+Kahneman, Daniel, and Amos Tversky. “Prospect Theory: An Analysis of Decision under Risk.” Econometrica 47, no. 2 (1979): 263–91. https://doi.org/10.2307/1914185.
+
+Gervais, Simon, and Terrance Odean. “Learning to Be Overconfident.” The Review of Financial Studies 14, no. 1 (2001): 1–27. http://www.jstor.org/stable/2696755.
+
+Grossman, Sanford J., and Joseph E. Stiglitz. “On the Impossibility of Informationally Efficient Markets.” The American Economic Review 70, no. 3 (1980): 393–408. http://www.jstor.org/stable/1805228.
+
+Andrew W. Lo, 2017,  Adaptive Markets: Financial Evolution at the Speed of Thought, Princeton University Press
+
+Fama, Eugene F. “Efficient Capital Markets: A Review of Theory and Empirical Work.” The Journal of Finance 25, no. 2 (1970): 383–417. https://doi.org/10.2307/2325486.
+    
+FAMA, E.F. and FRENCH, K.R. (2008), Dissecting Anomalies. The Journal of Finance, 63: 1653-1678. https://doi.org/10.1111/j.1540-6261.2008.01371.x
+
+Lewellen, Jonathan. (2011). The Cross-section of Expected Stock Returns. Critical Finance Review. 4. 10.1561/104.00000024. 
+
+Koijen, Ralph S. J. and Van Nieuwerburgh, Stijn, Predictability of Returns and Cash Flows (January 6, 2011). Available at SSRN: https://ssrn.com/abstract=1723463 or http://dx.doi.org/10.2139/ssrn.1723463 
+
+Rapach, David and Zhou, Guofu, (2013), Forecasting Stock Returns, ch. Chapter 6, p. 328-383, Elsevier, https://EconPapers.repec.org/RePEc:eee:ecofch:2-328.
+
+Rodolfo C. Cavalcante, Rodrigo C. Brasileiro, Victor L.F. Souza, Jarley P. Nobrega, Adriano L.I. Oliveira, Computational Intelligence and Financial Markets: A Survey and Future Directions, Expert Systems with Applications,Volume 55,2016,Pages 194-211,ISSN 0957-4174,
+https://doi.org/10.1016/j.eswa.2016.02.006.
+
+Arman Khadjeh Nassirtoussi, Saeed Aghabozorgi, Teh Ying Wah, and David Chek Ling Ngo. 2014. Review: Text mining for market prediction: A systematic review. Expert Syst. Appl. 41, 16 (November, 2014), 7653–7670. DOI:https://doi.org/10.1016/j.eswa.2014.06.009
+
+Atsalakis, G.S. and Valavanis, K.P. (2009) Surveying Stock Market Forecasting Techniques—Part II: Soft Computing Methods. Expert Systems with Applications, 36, 5932-5941. http://dx.doi.org/10.1016/j.eswa.2008.07.006 
+
+Khandani, Amir E., Kim, Adlar J. and Lo, Andrew, (2010), Consumer credit-risk models via machine-learning algorithms, Journal of Banking & Finance, 34, issue 11, p. 2767-2787, https://EconPapers.repec.org/RePEc:eee:jbfina:v:34:y:2010:i:11:p:2767-2787.
+
+RAPACH, D.E., STRAUSS, J.K. and ZHOU, G. (2013), International Stock Return Predictability: What Is the Role of the United States?. The Journal of Finance, 68: 1633-1662. https://doi.org/10.1111/jofi.12041
+
+Florentin Butaru, Qingqing Chen, Brian Clark, Sanmay Das, Andrew W. Lo, Akhtar Siddique, Risk and risk management in the credit card industry,Journal of Banking & Finance,Volume 72,2016,Pages 218-239,ISSN 0378-4266,https://doi.org/10.1016/j.jbankfin.2016.07.015.
+
+Harvey, Campbell R. and Liu, Yan and Zhu, Caroline, …and the Cross-Section of Expected Returns (February 3, 2015). Available at SSRN: https://ssrn.com/abstract=2249314 or http://dx.doi.org/10.2139/ssrn.2249314 
+
+ Giglio, Stefano and Xiu, Dacheng, Asset Pricing with Omitted Factors (September 14, 2019). Chicago Booth Research Paper No. 16-21, Available at SSRN: https://ssrn.com/abstract=2865922 or http://dx.doi.org/10.2139/ssrn.2865922 
+
+Bryan T. Kelly, Seth Pruitt, Yinan Su,Characteristics are covariances: A unified model of risk and return,Journal of Financial Economics,Volume 134, Issue 3,2019,Pages 501-524,ISSN 0304-405X,https://doi.org/10.1016/j.jfineco.2019.05.001.
+
+KOZAK, S., NAGEL, S. and SANTOSH, S. (2018), Interpreting Factor Models. The Journal of Finance, 73: 1183-1223. https://doi.org/10.1111/jofi.12612
+
+Freyberger, J., Neuhierl, A., Weber, M., 2020. Dissecting characteristics nonparametrically. The Review of Financial Studies 33, 2326–2377.
+
+Bellman R.E. Adaptive Control Processes. Princeton University Press, Princeton, NJ, 1961.
+
+X. Zhong and D. L. Enke, "Forecasting Daily Stock Market Return using Dimensionality Reduction," Expert Systems with Applications, vol. 67, pp. 126-139, Elsevier, Jan 2017.
+
+Guresen, E.; Kayakutlu, G.; Daim, T.U. Using artificial neural network models in stock market index prediction. Expert Syst. Appl.2011, 38, 10389–10397.
+
+Porshnev, A.; Redkin, I.; Karpov, N. Modelling Movement of Stock Market Indexes with Data from Emoticons of Twitter Users.Commun. Comput. Inf. Sci. 2015, 205, 297–306.
+
+
+Sharma, S.; Ahmed, S.; Naseem, M.; Alnumay,W.S.; Singh, S.; Cho, G.H. A Survey on Applications of Artificial Intelligence for Pre-Parametric Project Cost and Soil Shear-Strength Estimation in Construction and Geotechnical Engineering. Sensors 2021, 21,
+463.
+
+Ganser, A.; Hollaus, B.; Stabinger, S. Classification of Tennis Shots with a Neural Network Approach. Sensors 2021, 21, 5703.
+
+Ticknor, J.L. A Bayesian regularized artificial neural network for stock market forecasting. Expert Syst. Appl. 2013, 40, 5501–5506.
+
+Lugmayr, A.; Gossen, G. Evaluation of methods and techniques for language based sentiment analysis for dax 30 stock exchange-A first concept of a ‘LUGO’ sentiment indicator. In Proceedings of the 5th InternationalWorkshop on Semantic Ambient Media Experience (SAME), Newcastle, UK, 18 June 2012; pp. 69–76.
+
+
+Hagenau, M.; Liebmann, M.; Hedwig, M.; Neumann, D. Automated News Reading: Stock Price Prediction Based on Financial News Using Context-Specific Features. In Proceedings of the 2012 45th Hawaii International Conference on System Sciences, Maui, HI, USA, 4–9 January 2012; pp. 1040–1049.
+
+
+Porshnev, A.; Redkin, I.; Karpov, N. Modelling Movement of Stock Market Indexes with Data from Emoticons of Twitter Users. Commun. Comput. Inf. Sci. 2015, 205, 297–306.
+
+Bustos, O.; Pomares, A.; Gonzalez, E. A comparison between SVM and multilayer perceptron in predicting an emerging financial market: Colombian stock market. In Proceedings of the 2017 Congreso Internacional de Innovacion y Tendencias en Ingenieria (CONIITI), Bogota, Colombia, 4–6 October 2017; pp. 1–6.
+
+Akhtar, M.J.; Ahmad, Z.; Amin, R.; Almotiri, S.H.; Al Ghamdi, M.A.; Aldabbas, H. An Efficient Mechanism for Product Data Extraction from E-CommerceWebsites. Comput. Mater. Contin. 2020, 65, 2639–2663.
+
+Ghanavati, M.;Wong, R.K.; Chen, F.;Wang, Y.; Fong, S. A Generic Service Framework for Stock Market Prediction. In Proceedings of the 2016 IEEE International Conference on Services Computing (SCC), San Francisco, CA, USA, 27 June–2 July 2016; pp.
+283–290.
+
+Ihlayyel, H.A.; Sharef, N.M.; Nazri, M.Z.A.; Abu Bakar, A. An enhanced feature representation based on linear regression model for stock market prediction. Intell. Data Anal. 2018, 22, 45–76.
+
+
+Milosevic, N. Equity forecast: Predicting long term stock price movement using machine learning. arXiv 2016, arXiv:1603.00751.
+
+Tan, T.Z.; Quek, C.; Ng, G.S. Biological Brain-Inspired Genetic Complementary Learning for Stock Market and Bank Failure Prediction. Comput. Intell. 2007, 23, 236–261
+
+Venugopal, K.R.; Srinivasa, K.G.; Patnaik, L.M. Fuzzy based neuro—Genetic algorithm for stock market prediction. Stud. Comput. Intell. 2009, 190, 139–166.
+
+
+Das, S.R.; Mishra, D.; Rout, M. Stock market prediction using Firefly algorithm with evolutionary framework optimized feature reduction for OSELM method. Expert Syst. Appl. X 2019, 4, 100016.
+
+Inthachot, M.; Boonjing, V.; Intakosum, S. Artificial Neural Network and Genetic Algorithm Hybrid Intelligence for Predicting Thai Stock Price Index Trend. Comput. Intell. Neurosci. 2016, 2016, 3045254.
+
+
+Rajput, V.; Bobde, S. Stock market prediction using hybrid approach. In Proceedings of the 2016 International Conference on Computing, Communication and Automation (ICCCA), Greater Noida, India, 29–30 April 2016; pp. 82–86.
+
+Chandar, S.K. Fusion model of wavelet transform and adaptive neuro fuzzy inference system for stock market prediction. J. Ambient. Intell. Humaniz. Comput. 2019, 1–9.
+
+Fink, Josef. (2021). A review of the Post-Earnings-Announcement Drift. Journal of Behavioral and Experimental Finance. 29. 100446. 10.1016/j.jbef.2020.100446. 
+
+
+
+
+
+
+
+<!-- ## Struktura -->
+
+
+<!-- 1. Uvod i pregled problema -->
+
+<!-- 2. Predviđanje ishoda na dioničkim tržištima (teorija i empirija/pregled literature) -->
+<!-- - EMH, AMH, bihevioralni pristup -->
+<!-- - tehnička i fundamentalna analiza -->
+<!-- - ekonometrija i strojno učenje -->
+<!-- - algoritamsko trgovanje i big data  -->
+
+<!-- 3. Metodologija strojnog učenja -->
+
+
+<!-- 4. Automatsko strojno učenje -->
+
+
+<!-- 5. Empirijska analiza -->
+
+<!-- 6. Diskusija -->
+
+
+<!-- 7. Zaključak -->
+
+
+
+
+
+
+
+
+
+
+
+

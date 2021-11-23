@@ -282,33 +282,20 @@ layout: true
 ---
 <br>
 <br>
-> H4:Ensemble pristup (kombinacija pojedinačnih predikcija) daje bolje predikcijske rezultate od pojedinačnih ML modela.
+> H4:Automatski model sa automatiziranim "preprocesuiranjem" i modeliranjem daje bolje rezultate od primjene standardnih modela strojnog ucenja bez preprocesuirnaja.
+
 
 <br><br>
 - Da li je bolja predikcija jednog ili prosjeka više modela?
 <br><br>
 - Koji je najbolji model? Postoji li takav ili je to ovisno o kontekstu?
+<br><br>
+- Nova ekonometrijska metodologija.
+
 
 <br>
 .footnote[[*] Doprinos na osnovi točke 2.]
 
-
----
-layout: true
-# H5
----
-<br>
-<br>
-> H5:Automatski model sa automatiziranim "preprocesuiranjem" i modeliranjem daje bolje rezultate od primjene standardnih modela strojnog ucenja bez preprocesuirnaja.
-
-<br><br>
-- 
-<br><br>
--
-
-
-<br><br>
-.footnote[[*] Doprinos na osnovi točke 3.]
 
 ---
 class: inverse, middle
