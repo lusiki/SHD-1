@@ -2,7 +2,7 @@
 title: "METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "I. znanstveni kolokvij"
-author: "Joško Marić, SN PECTINATUS"
+author: "Joško Marić"
 date: "" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
@@ -46,21 +46,19 @@ library(hrbrthemes)
 
 
 <br>
-#### **1. Istraživački problem**
+#### **1. Istraživački okvir**
 <br>
 #### **2. Literatura**
 <br>
 #### **3. Istraživačka pitanja, ciljevi, hipoteze**
 <br>
-#### **4. Konceptualizacija**
-<br>
-#### **5. Znanstveni doprinos**
+#### **4. Znanstveni doprinos**
 
 
 ---
 class: inverse, middle
 layout: false
-# ISTRAŽIVAČKI PROBLEM
+# ISTRAŽIVAČKI OKVIR
 ---
 layout: true
 # Predmet i područje
@@ -71,7 +69,7 @@ layout: true
 
 ##### Predmet
 
-> Testiranje utjecaja preprocesnog modeliranja, uglađivanja modela i kalibriranja sustava strojnog učenja na točnost predviđanja budućih povrata.
+> Testiranje utjecaja predprocesnog modeliranja podataka, uglađivanja modela i kalibriranja sustava strojnog učenja s ciljem povećanja točnosti predviđanja povrata na dioničkim tržištima.
 
 <br>
 <br>
@@ -81,13 +79,19 @@ layout: true
 <br>
 - modeliranje i predviđanje povrata na dioničkim tržištima u užem smislu 
 <br>
-- područje istraživanje se poklapa s empirijskim vrednovanjem imovine (*empirical assets pricing*)
+- područje istraživanja se poklapa s empirijskim vrednovanjem imovine (*empirical assets pricing*)
 
 ---
 layout: true
 # Problem
 
 ---
+
+<br>
+<br>
+
+> **Kako primjeniti metodologiju strojnog učenja za predviđanje ishoda na dioničkim tržištima?**
+
 <br>
 - tradicionalno korištene statističke metode (vremenske serije)
 <br><br>
@@ -96,9 +100,6 @@ layout: true
 - algoritamsko trgovanje dominira
 <br>
 <br>
-<br>
-<br>
-> **Kako primjeniti metodologiju strojnog učenja za predviđanje ishoda na dioničkim tržištima?**
 
 
 ---
@@ -113,13 +114,13 @@ layout: true
 <br>
 <br>
 <br>
-- koncept efikasnog tržišta -> nemoguća predikcija
+- koncept efikasnog tržišta = suvišna predikcija
 <br>
 <br>
 - tržišne neefikasnosti 
 <br>
 <br>
-- tržišta nisu potpuno efikasna -> predikcija moguća
+- tržišta nisu potpuno efikasna = predikcija poželjna
 <br>
 <br>
 - tradicionalno: tehnički vs fundamentalni indikatori 
@@ -138,19 +139,18 @@ layout: true
 - empirijsko vrednovanje imovine bazirano na statističkoj paradigmi
 <br>
 <br>
-- standardno korištene prostorne regresije i vremenske serije
+- standardno korištene prostorne regresije i vremenske serije u statističkoj paradigmi 
 <br>
 <br>
-- predikcija je primarno problem za strojno učenja
+- predikcija je primarno problem za strojno učenje
 <br>
 <br>
-- specifična svojstva financijskih serija + veliki podatci
+- specifična svojstva financijskih serija + veliki podatci -> primjena metodologije strojnog učenja
 <br>
 <br>
-- primjena metodologije strojnog učenja
 <br>
-<br>
-- kako kalibrirati segmente metodologije strojnog učenja
+
+> **Problem: Kako kalibrirati segmente metodologije strojnog učenja?**
 
 
 ---
@@ -169,10 +169,10 @@ layout: true
 - Na koji način prilagoditi i obraditi nezavisne varijable (inpute) sustavu strojnog učenja za postizanje boljeg predikcijskog ishoda?
 <br>
 <br>
-- Koje varijable (indikatori) imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli?
+- Koje nezvisne varijable (indikatori) imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli?
 <br>
 <br>
-- Koje su prednosti i nedostatci uvođenja alternativnih zavisnih varijabli (npr. tekst/sentiment)?
+- Koje su prednosti i nedostatci uvođenja alternativnih nezavisnih varijabli (npr. tekst/sentiment)?
 <br>
 <br>
 - Kakve su implikacije (automatskih) ML sustava za kvantitativnu metodologiju u financijama i ekonometriji?
@@ -221,7 +221,7 @@ layout: true
 <br>
 <br>
 
-> H1: *Sampling barova* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
+> H1: *Sampling bar podataka* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
 
 
 
@@ -230,11 +230,11 @@ layout: true
 <br><br>
 - Specifičnosti financijskih vremenskih serija?
 <br><br>
-- Implikacije za EMH!
+- Implikacije za teoriju efikasnog tržišta!
 <br>
 
 
-.footnote[[*] Doprinos na osnovi točke 1.]
+.footnote[[*] Doprinos na osnovi točke 1.; bar podatci-OHLC]
 
 ---
 layout: true
@@ -251,7 +251,7 @@ layout: true
 <br><br>
 - Koji su to bitni podatci?
 <br><br>
-- Koje metode koristiti za samanjenje dimenzionalnosti?
+- Koje metode koristiti za smanjenje dimenzionalnosti?
 <br><br>
 
 
@@ -282,20 +282,19 @@ layout: true
 ---
 <br>
 <br>
-> H4:Automatski model sa automatiziranim "preprocesuiranjem" i modeliranjem daje bolje rezultate od primjene standardnih modela strojnog ucenja bez preprocesuirnaja.
+> H4: Automatski model strojnog učenja daje bolje prediktivne rezulatate ishoda na dioničkim tržištima od standarnog modela strojnog učenja.
+
+<br><br>
+- Koji je najbolji model (algoritam) strojnog učenja? 
+<br><br>
+- Je li novi metodološki okvir značajan?
+
+
+
 
 
 <br><br>
-- Da li je bolja predikcija jednog ili prosjeka više modela?
-<br><br>
-- Koji je najbolji model? Postoji li takav ili je to ovisno o kontekstu?
-<br><br>
-- Nova ekonometrijska metodologija.
-
-
-<br>
-.footnote[[*] Doprinos na osnovi točke 2.]
-
+.footnote[[*] Doprinos na osnovi točke 3.]
 
 ---
 class: inverse, middle
@@ -313,7 +312,7 @@ layout:true
 <br>
 #### **DOPRINOS NA POLJU**:
 
-1. Definiranja i formulacija značajnih i novih (zavisnih) varijabli (pokazatelja).
+1. Definiranja i formulacija značajnih i novih (zavisnih i nezavisnih) varijabli (pokazatelja).
 <br><br>
 
 2. Smanjenja predikcijske pogreške u predviđanju  ishoda na tržištima kapitala.

@@ -3,7 +3,7 @@
   <head>
     <title>METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Joško Marić, SN PECTINATUS" />
+    <meta name="author" content="Joško Marić" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 
 # METODOLOGIJA STROJNOG UČENJA U PREDIKCIJI DIONIČKIH TRŽIŠTA
 ## I. znanstveni kolokvij
-### Joško Marić, SN PECTINATUS
+### Joško Marić
 
 ---
 
@@ -31,21 +31,19 @@ class: center, middle, inverse, title-slide
 
 
 &lt;br&gt;
-#### **1. Istraživački problem**
+#### **1. Istraživački okvir**
 &lt;br&gt;
 #### **2. Literatura**
 &lt;br&gt;
 #### **3. Istraživačka pitanja, ciljevi, hipoteze**
 &lt;br&gt;
-#### **4. Konceptualizacija**
-&lt;br&gt;
-#### **5. Znanstveni doprinos**
+#### **4. Znanstveni doprinos**
 
 
 ---
 class: inverse, middle
 layout: false
-# ISTRAŽIVAČKI PROBLEM
+# ISTRAŽIVAČKI OKVIR
 ---
 layout: true
 # Predmet i područje
@@ -56,7 +54,7 @@ layout: true
 
 ##### Predmet
 
-&gt; Testiranje utjecaja preprocesnog modeliranja, uglađivanja modela i kalibriranja sustava strojnog učenja na točnost predviđanja budućih povrata.
+&gt; Testiranje utjecaja predprocesnog modeliranja podataka, uglađivanja modela i kalibriranja sustava strojnog učenja s ciljem povećanja točnosti predviđanja povrata na dioničkim tržištima.
 
 &lt;br&gt;
 &lt;br&gt;
@@ -66,13 +64,19 @@ layout: true
 &lt;br&gt;
 - modeliranje i predviđanje povrata na dioničkim tržištima u užem smislu 
 &lt;br&gt;
-- područje istraživanje se poklapa s empirijskim vrednovanjem imovine (*empirical assets pricing*)
+- područje istraživanja se poklapa s empirijskim vrednovanjem imovine (*empirical assets pricing*)
 
 ---
 layout: true
 # Problem
 
 ---
+
+&lt;br&gt;
+&lt;br&gt;
+
+&gt; **Kako primjeniti metodologiju strojnog učenja za predviđanje ishoda na dioničkim tržištima?**
+
 &lt;br&gt;
 - tradicionalno korištene statističke metode (vremenske serije)
 &lt;br&gt;&lt;br&gt;
@@ -81,9 +85,6 @@ layout: true
 - algoritamsko trgovanje dominira
 &lt;br&gt;
 &lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&gt; **Kako primjeniti metodologiju strojnog učenja za predviđanje ishoda na dioničkim tržištima?**
 
 
 ---
@@ -98,13 +99,13 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
-- koncept efikasnog tržišta -&gt; nemoguća predikcija
+- koncept efikasnog tržišta = suvišna predikcija
 &lt;br&gt;
 &lt;br&gt;
 - tržišne neefikasnosti 
 &lt;br&gt;
 &lt;br&gt;
-- tržišta nisu potpuno efikasna -&gt; predikcija moguća
+- tržišta nisu potpuno efikasna = predikcija poželjna
 &lt;br&gt;
 &lt;br&gt;
 - tradicionalno: tehnički vs fundamentalni indikatori 
@@ -123,19 +124,18 @@ layout: true
 - empirijsko vrednovanje imovine bazirano na statističkoj paradigmi
 &lt;br&gt;
 &lt;br&gt;
-- standardno korištene prostorne regresije i vremenske serije
+- standardno korištene prostorne regresije i vremenske serije u statističkoj paradigmi 
 &lt;br&gt;
 &lt;br&gt;
-- predikcija je primarno problem za strojno učenja
+- predikcija je primarno problem za strojno učenje
 &lt;br&gt;
 &lt;br&gt;
-- specifična svojstva financijskih serija + veliki podatci
+- specifična svojstva financijskih serija + veliki podatci -&gt; primjena metodologije strojnog učenja
 &lt;br&gt;
 &lt;br&gt;
-- primjena metodologije strojnog učenja
 &lt;br&gt;
-&lt;br&gt;
-- kako kalibrirati segmente metodologije strojnog učenja
+
+&gt; **Problem: Kako kalibrirati segmente metodologije strojnog učenja?**
 
 
 ---
@@ -154,10 +154,10 @@ layout: true
 - Na koji način prilagoditi i obraditi nezavisne varijable (inpute) sustavu strojnog učenja za postizanje boljeg predikcijskog ishoda?
 &lt;br&gt;
 &lt;br&gt;
-- Koje varijable (indikatori) imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli?
+- Koje nezvisne varijable (indikatori) imaju veću važnost i na koji način provesti diskriminaciju ulaznih varijabli?
 &lt;br&gt;
 &lt;br&gt;
-- Koje su prednosti i nedostatci uvođenja alternativnih zavisnih varijabli (npr. tekst/sentiment)?
+- Koje su prednosti i nedostatci uvođenja alternativnih nezavisnih varijabli (npr. tekst/sentiment)?
 &lt;br&gt;
 &lt;br&gt;
 - Kakve su implikacije (automatskih) ML sustava za kvantitativnu metodologiju u financijama i ekonometriji?
@@ -206,7 +206,7 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 
-&gt; H1: *Sampling barova* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
+&gt; H1: *Sampling bar podataka* pomoću testova strukturnog loma i CUSUM filtera poboljšava predikcijsku sposobnost modela u odnosu na modele koji koriste kompletni uzorak za predikciju.
 
 
 
@@ -215,11 +215,11 @@ layout: true
 &lt;br&gt;&lt;br&gt;
 - Specifičnosti financijskih vremenskih serija?
 &lt;br&gt;&lt;br&gt;
-- Implikacije za EMH!
+- Implikacije za teoriju efikasnog tržišta!
 &lt;br&gt;
 
 
-.footnote[[*] Doprinos na osnovi točke 1.]
+.footnote[[*] Doprinos na osnovi točke 1.; bar podatci-OHLC]
 
 ---
 layout: true
@@ -236,7 +236,7 @@ layout: true
 &lt;br&gt;&lt;br&gt;
 - Koji su to bitni podatci?
 &lt;br&gt;&lt;br&gt;
-- Koje metode koristiti za samanjenje dimenzionalnosti?
+- Koje metode koristiti za smanjenje dimenzionalnosti?
 &lt;br&gt;&lt;br&gt;
 
 
@@ -267,20 +267,19 @@ layout: true
 ---
 &lt;br&gt;
 &lt;br&gt;
-&gt; H4:Automatski model sa automatiziranim "preprocesuiranjem" i modeliranjem daje bolje rezultate od primjene standardnih modela strojnog ucenja bez preprocesuirnaja.
+&gt; H4: Automatski model strojnog učenja daje bolje prediktivne rezulatate ishoda na dioničkim tržištima od standarnog modela strojnog učenja.
+
+&lt;br&gt;&lt;br&gt;
+- Koji je najbolji model (algoritam) strojnog učenja? 
+&lt;br&gt;&lt;br&gt;
+- Je li novi metodološki okvir značajan?
+
+
+
 
 
 &lt;br&gt;&lt;br&gt;
-- Da li je bolja predikcija jednog ili prosjeka više modela?
-&lt;br&gt;&lt;br&gt;
-- Koji je najbolji model? Postoji li takav ili je to ovisno o kontekstu?
-&lt;br&gt;&lt;br&gt;
-- Nova ekonometrijska metodologija.
-
-
-&lt;br&gt;
-.footnote[[*] Doprinos na osnovi točke 2.]
-
+.footnote[[*] Doprinos na osnovi točke 3.]
 
 ---
 class: inverse, middle
@@ -298,7 +297,7 @@ layout:true
 &lt;br&gt;
 #### **DOPRINOS NA POLJU**:
 
-1. Definiranja i formulacija značajnih i novih (zavisnih) varijabli (pokazatelja).
+1. Definiranja i formulacija značajnih i novih (zavisnih i nezavisnih) varijabli (pokazatelja).
 &lt;br&gt;&lt;br&gt;
 
 2. Smanjenja predikcijske pogreške u predviđanju  ishoda na tržištima kapitala.
