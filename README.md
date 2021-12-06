@@ -31,6 +31,6 @@ Izabrane ekonomske teme.
 <br>
 <br>
 
-<a href="https://raw.githack.com/lusiki/SHD-1/main/privremeno.html">Privremeno</a>
+<a href="">Privremeno</a>
 
-<a href="https://raw.githack.com/lusiki/SHD-1/main/privremeno2.html">Privremeno2</a>
+<a href="">Privremeno2</a>
