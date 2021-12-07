@@ -20,7 +20,7 @@ Izabrane ekonomske teme.
 <a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/STRUKTURNA-PROMJENA.html">2. Ekonomska struktura Hrvatske</a>
 <br>
 <br>
-<a href="">3. Digitalizacija</a>
+<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/Digitalizacija.html">3. Digitalna ekonomija</a>
 <br>
 <br>
 <a href="">4. Tehnološki transfer</a>
@@ -30,7 +30,3 @@ Izabrane ekonomske teme.
 <br>
 <br>
 <br>
-
-<a href="">Privremeno</a>
-
-<a href="">Privremeno2</a>
