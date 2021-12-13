@@ -1,0 +1,560 @@
+---
+title: "SOCIOLOGIJA HRVATSKOG DRUŠTVA"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Transfer tehnologije"
+author: "Luka Sikic, PhD"
+date: "Fakultet hrvatskih studija | [Github SHD](https://github.com/lusiki/SHD-1)" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+class: inverse, middle
+
+```{R, setup, include = F}
+# devtools::install_github("dill/emoGG")
+library(pacman)
+p_load(
+  broom, tidyverse,
+  latex2exp, ggplot2, ggthemes, ggforce, viridis, extrafont, gridExtra,
+  kableExtra, snakecase, janitor,
+  data.table, dplyr, estimatr,
+  lubridate, knitr, parallel,
+  lfe,
+  here, magrittr
+)
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Dark slate grey: #314f4f
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+# A blank theme for ggplot
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -0.5, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_simple <- theme_bw() + theme(
+  line = element_blank(),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text.x = element_text(size = 18, family = "STIXGeneral"),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  # plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_math <- theme_void() + theme(
+  text = element_text(family = "MathJax_Math"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_serif <- theme_void() + theme(
+  text = element_text(family = "MathJax_Main"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes <- theme_void() + theme(
+  text = element_text(family = "Fira Sans Book"),
+  axis.title = element_text(size = 18),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = grey_light,
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_set(theme_gray(base_size = 20))
+# Column names for regression results
+reg_columns <- c("Term", "Est.", "S.E.", "t stat.", "p-Value")
+# Function for formatting p values
+format_pvi <- function(pv) {
+  return(ifelse(
+    pv < 0.0001,
+    "<0.0001",
+    round(pv, 4) %>% format(scientific = F)
+  ))
+}
+format_pv <- function(pvs) lapply(X = pvs, FUN = format_pvi) %>% unlist()
+# Tidy regression results table
+tidy_table <- function(x, terms, highlight_row = 1, highlight_color = "black", highlight_bold = T, digits = c(NA, 3, 3, 2, 5), title = NULL) {
+  x %>%
+    tidy() %>%
+    select(1:5) %>%
+    mutate(
+      term = terms,
+      p.value = p.value %>% format_pv()
+    ) %>%
+    kable(
+      col.names = reg_columns,
+      escape = F,
+      digits = digits,
+      caption = title
+    ) %>%
+    kable_styling(font_size = 20) %>%
+    row_spec(1:nrow(tidy(x)), background = "white") %>%
+    row_spec(highlight_row, bold = highlight_bold, color = highlight_color)
+}
+```
+
+```{css, echo = F, eval = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+
+# PREGLED PREDAVANJA
+
+---
+layout: true
+# PREGLED PREDAVANJA
+---
+<br>
+<br>
+- Obuhvat područja
+<br>
+<br>
+<br>
+- Kanali tehnološkog transfera
+<br>
+<br>
+<br>
+- ICT
+<br>
+<br>
+<br>
+- Empirijske činjenice
+<br>
+<br>
+<br>
+- Resursi
+
+---
+layout: false
+class: middle, inverse
+
+# OBUHVAT PODRUČJA
+---
+layout: true
+# Općenito
+---
+<br>
+<br>
+- pregled [najvažnijih tema](http://mx.nthu.edu.tw/~cshwang/data-economics/course-infoecon/INFE11-Business/Overby=Digital%20Economics-2018.pdf) iz područja
+<br>
+<br>
+- najvažniji [trendovi i stilizirane činjenice](https://digital-strategy.ec.europa.eu/en/policies/desi) 
+<br>
+<br>
+- kolegiji: [Digital Economics I](https://digital-strategy.ec.europa.eu/en/policies/desi), [Digital Economics II](https://www.tse-fr.eu/sites/default/files/TSE/ecole/doc/syllabi/2019-2020/M2/m2_s2_digital_economics_ershov.pdf), [Digital Economics III](https://moodle.polytechnique.fr/enrol/index.php?id=9724)
+<br>
+<br>
+- interdisciplinarno područje: ekonomika, sociologija, rančunalne znanosti, tehnologija
+<br>
+<br>
+- kvalitetni izvori podataka: [BEA](https://www.bea.gov/data/special-topics/digital-economy), [OECD](https://www.bea.gov/data/special-topics/digital-economy), [DESI](https://ec.europa.eu/eurostat/web/digital-economy-and-society/data/database) 
+---
+layout: true
+# Najvažnije teme u području
+---
+<br>
+<br>
+- definiranje pojmova -> što je digitalna ekonomija?
+<br>
+<br>
+- trendovi i dinamika razvoja
+<br>
+<br>
+- razvoj tehnologije 
+<br>
+<br>
+- faktori rasta i razvoja
+<br>
+<br>
+- društveni učinci
+<br>
+<br>
+- veliki podatci (Big Data)
+<br>
+<br>
+- zakonska regulacija
+
+---
+layout: true
+# Pokazatelji
+---
+<br>
+<br>
+- pristup Internetu i mobilnoj mreži
+<br>
+<br>
+- najveće kompanije su tehnološke (mrežni efekti, disruptivne tehnologije)
+<br>
+<br>
+- digitalizacija podataka
+<br>
+<br>
+- ICT infrastruktura
+<br>
+<br>
+- računalni kapaciteti
+<br>
+<br>
+- automatizacija
+
+---
+layout: true
+# Elementi
+---
+<br>
+<br>
+- mrežna ekonomija
+<br>
+<br>
+- platformska ekonomija
+<br>
+<br>
+- informacijska ekonomija
+<br>
+<br>
+- podatkovna ekonomja
+<br>
+<br>
+- virtualna ekonomija
+<br>
+<br>
+- ekonomija pažnje (attention economy)
+<br>
+<br>
+- *sharing* ekonomija
+
+---
+layout: true
+# Tvrtke
+---
+<br>
+<br>
+- content provideri (YouTube, Netflix)
+<br>
+<br> (Fb, Linkedin, Twitter)
+<br>
+<br>
+- proizvođači hardware/software (Apple, Microsoft)
+<br>
+<br>
+- mrežni operatori
+<br>
+<br>
+- elektronska plaćanja (PayPal, Bitcoin)
+<br>
+<br>
+- e-commerce (eBay, Amazon)
+<br>
+<br>
+- sharing (Uber,Airbnb) 
+<br>
+<br>
+- cloud
+
+---
+layout: false
+class: middle, inverse
+
+# DIGITALNA EKONOMIKA
+---
+layout: true
+# Teorijska osnova
+---
+<br>
+<br>
+<br>
+- članak [Digital Economics](https://mitsloan.mit.edu/shared/ods/documents?PublicationDocumentID=5901)
+<br>
+<br>
+- osnova za digitalnu ekonomiju je na troškovnoj strani
+<br>
+<br>
+- manji trošak potrage
+<br>
+<br>
+- manji trošak replikacije
+<br>
+<br>
+- manji trošak transporta
+<br>
+<br>
+- manji trošak praćenja i verifikacije
+
+---
+layout: true
+# Mjerenje digitalne ekonomije
+---
+<br>
+<br>
+<br>
+- [ne postoji konsenzus](https://hbr.org/2019/11/how-should-we-measure-the-digital-economy) oko definicije
+<br>
+<br>
+- [sektori](https://www.brookings.edu/research/trends-in-the-information-technology-sector/) koji proizvode digitalne tehnologije
+<br>
+<br>
+- poduzeća/poslovi koja koriste digitalne tehnologije (Uber, Airbnb)
+<br>
+<br>
+- inicijativa za netransparentnost
+
+---
+layout: true
+# Digitalno društvo 
+---
+<br>
+<br>
+<br>
+- velilki podatci i otkrivene preferencije
+<br>
+<br>
+- kompanije više znaju o društvu nego znanost
+<br>
+<br>
+- distribucija moći u društvu
+<br>
+<br>
+- algoritamsko društvo
+<br>
+<br>
+- utjecaj na pojedinca
+
+
+---
+layout: false
+class: middle, inverse
+
+# ICT
+---
+layout: true
+# Povijesni razvoj
+---
+<br>
+<br>
+- razvoj telekomunikacija od 1860-ih
+<br>
+<br>
+- razvoj informacijske tehnologije od 1970-ih
+<br>
+<br>
+- ujedinjenje u ICT sa nastankom interneta 1993. godine
+<br>
+<br>
+- mrežne tehnologije i pametni uređaji oko 2010. godine
+<br>
+<br>
+- infrastruktura za obradu podataka 
+<br>
+<br>
+- 5G
+
+
+---
+layout: true
+# Tehnološki razvoj 
+---
+<br>
+<br>
+- razvoj telekomunikacija puno sporiji i zahtjevniji 
+<br>
+<br>
+- razvoj informacijskih tehnologija ovisi o infrastrukturi
+<br>
+<br>
+- **internet stvari (IoT)**
+<br>
+<br>
+- potrošački
+<br>
+<br>
+- komercjalni
+<br>
+<br>
+- industrijski
+<br>
+<br>
+- infrastrukturni
+<br>
+<br>
+- vojni
+
+
+---
+layout: false
+class: middle, inverse
+
+# DIGITALIZACIJA
+---
+layout: true
+# SVIJET
+---
+
+<br>
+<br>
+- [The Global Digital Economy](https://hbr.org/insight-center/the-global-digital-economy)
+<br>
+<br>
+- [Svjetska Banka](https://blogs.worldbank.org/tags/digital-economy)
+<br>
+<br>
+- [globalna digitalna podjela](https://www.tandfonline.com/doi/full/10.1080/19186444.2020.1871257)
+<br>
+<br>
+- [nove mjere digitalne ekonomije](https://www.forbes.com/sites/paulxmccarthy/2021/11/16/new-measures-for-the-digital-economy/?sh=4ff534fe7453)
+<br>
+<br>
+- [Digital Economy Compass 2021 ](https://www.statista.com/study/105653/digital-economy-compass/)
+
+---
+layout: true
+# EUROPA
+---
+<br>
+<br>
+- [Digital Economy and Society Index 2021](https://ec.europa.eu/commission/presscorner/detail/en/ip_21_5481)
+<br>
+<br>
+- [pregled po zemljama](https://www.researchgate.net/publication/330214500_Digital_economy_in_Europe_Evaluation_of_countries%27_performances) 
+<br>
+<br>
+- [središnja i istočna Europa](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/digital-challengers-in-the-next-normal-in-central-and-eastern-europe)
+<br>
+<br>
+- [EU Policy Blog](https://blogs.microsoft.com/eupolicy/category/digital-economy/)
+<br>
+<br>
+- [East Central Europe needs a new growth model](https://wiiw.ac.at/east-central-europe-needs-a-new-growth-model-n-532.html)
+
+---
+layout: true
+# HRVATSKA
+---
+<br>
+<br>
+- mjerenje [digitalne ekonomije u RH](https://www.researchgate.net/publication/340979313_DEFINING_AND_MEASURING_THE_DIGITAL_ECONOMY_IN_CROATIA) 
+<br>
+<br>
+- [ekonomska analiza sektora profesionalnih i poslovnih usluga u RH](https://docplayer.net/39846874-Ekonomska-analiza-sektora-profesionalnih-i-poslovnih-usluga-arhivanalitika-za-ministarstvo-gospodarstva-republike-hrvatske.html)
+<br>
+<br>
+- [digitalna ekonomija u Hrvatskoj](http://croecon.contentio.biz/post/digitalna-ekonomija-u-hrvatskoj/)
+
+- digitalna ekonomija na [Netokraciji](https://www.netokracija.com/tag/digitalna-ekonomija)
+---
+layout: false
+class: middle, inverse
+
+# RESURSI
+---
+layout: true
+# Knjige, dokumentarci i ostalo
+---
+<br>
+<br>
+<br>
+
+- [Ten Arguments for Deleting Your Social Media Accounts Right Now](https://www.amazon.com/Arguments-Deleting-Social-Media-Accounts/dp/1250239087/ref=asc_df_1250239087/?tag=hyprod-20&linkCode=df0&hvadid=380083827000&hvpos=&hvnetw=g&hvrand=608489697268562107&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1016367&hvtargid=pla-638091742790&psc=1&tag=&ref=&adgrpid=77281545773&hvpone=&hvptwo=&hvadid=380083827000&hvpos=&hvnetw=g&hvrand=608489697268562107&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1016367&hvtargid=pla-638091742790)
+<br>
+<br>
+- [Who Owns the Future?](https://www.thriftbooks.com/w/who-owns-the-future_jaron-lanier/3068184/item/6786700/?gclid=Cj0KCQiAqbyNBhC2ARIsALDwAsCoWX4lxQwLuAX24JZiBPAx4pJ_JZw-8UOpGoktVMFptwfWqvdfUxgaAtrBEALw_wcB#idiq=6786700&edition=8048822)
+<br>
+<br>
+- [Sociological Theory in the Digital Age ](https://www.routledge.com/Sociological-Theory-in-the-Digital-Age/Ignatow/p/book/9780367263478)
+<br>
+<br>
+- [The social Dilemma](https://www.thesocialdilemma.com/)
+<br>
+<br>
+- [The Creepy Line](https://www.imdb.com/title/tt8896670/)
+<br>
+<br>
+- [Learning Social Media Analytics](https://lusiki.github.io/Learning-Social-Media-Analytics/)
+
+
+
+---
+
+layout:false
+class: middle, inverse
+# Hvala na pozornosti! 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+(Sljedeće predavanje: Transfer tehnologije)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
