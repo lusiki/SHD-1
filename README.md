@@ -23,7 +23,7 @@ Izabrane ekonomske teme.
 <a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/Digitalizacija.html">3. Digitalna ekonomija</a>
 <br>
 <br>
-<a href="">4. Tehnološki transfer</a>
+<a href="https://raw.githack.com/lusiki/SHD-1/main/Predavanja/TRANSFER-TEHNOLOGIJE.html#1">4. Tehnološki transfer</a>
 <br>
 <br>
 <br>
