@@ -177,10 +177,6 @@ layout: true
 <br>
 <br>
 <br>
-- ICT
-<br>
-<br>
-<br>
 - Empirijske činjenice
 <br>
 <br>
@@ -198,275 +194,162 @@ layout: true
 ---
 <br>
 <br>
-- pregled [najvažnijih tema](http://mx.nthu.edu.tw/~cshwang/data-economics/course-infoecon/INFE11-Business/Overby=Digital%20Economics-2018.pdf) iz područja
+- područje dugo u središtu interesa -> [prednost zaostalosti](https://www.cambridge.org/core/journals/journal-of-economic-history/article/abs/catching-up-forging-ahead-and-falling-behind/E0FA8944FFE9930844D755768E9D0106)
 <br>
 <br>
-- najvažniji [trendovi i stilizirane činjenice](https://digital-strategy.ec.europa.eu/en/policies/desi) 
+- [konvergencijska debata](https://onlinelibrary.wiley.com/doi/abs/10.1111/1467-6419.00197), [konvergencija danas](https://www.weforum.org/agenda/2018/02/the-future-of-economic-convergence), [budućnost konvergencije](https://www.brookings.edu/opinions/the-future-of-economic-convergence/), [otimizam oko globalnog razvoja!?](https://voxeu.org/article/it-s-too-soon-optimism-about-convergence), [konvergencijska teorija](https://opentextbc.ca/principlesofeconomics/chapter/20-4-economic-convergence/) 
 <br>
 <br>
-- kolegiji: [Digital Economics I](https://digital-strategy.ec.europa.eu/en/policies/desi), [Digital Economics II](https://www.tse-fr.eu/sites/default/files/TSE/ecole/doc/syllabi/2019-2020/M2/m2_s2_digital_economics_ershov.pdf), [Digital Economics III](https://moodle.polytechnique.fr/enrol/index.php?id=9724)
+- kolegiji indirektno vezani uz područje
 <br>
 <br>
-- interdisciplinarno područje: ekonomika, sociologija, rančunalne znanosti, tehnologija
+- interdisciplinarno područje 
 <br>
 <br>
-- kvalitetni izvori podataka: [BEA](https://www.bea.gov/data/special-topics/digital-economy), [OECD](https://www.bea.gov/data/special-topics/digital-economy), [DESI](https://ec.europa.eu/eurostat/web/digital-economy-and-society/data/database) 
+- [hrvatske politike](https://mzo.gov.hr/istaknute-teme/znanost/transfer-tehnologije/122),
+[europske politike](https://knowledge4policy.ec.europa.eu/technology-transfer/about_en#), [globalne politike](https://www.oecd-ilibrary.org/docserver/ada51ec0-en.pdf?expires=1639396009&id=id&accname=guest&checksum=705C4661A88023A9520DB99921EC2277)
 ---
 layout: true
 # Najvažnije teme u području
 ---
 <br>
 <br>
-- definiranje pojmova -> što je digitalna ekonomija?
+- razvoj tehnologije i inovacija (sveučilište, tvrtke)
 <br>
 <br>
-- trendovi i dinamika razvoja
+- suradnja znanstvenog i poslovnog sektora
 <br>
 <br>
-- razvoj tehnologije 
+- razlika između zemalja 
 <br>
 <br>
-- faktori rasta i razvoja
+- uloga tehnologije u ekonomskom rastu
 <br>
 <br>
-- društveni učinci
+- načini transfera tehnologije
 <br>
 <br>
-- veliki podatci (Big Data)
-<br>
-<br>
-- zakonska regulacija
-
----
-layout: true
-# Pokazatelji
----
-<br>
-<br>
-- pristup Internetu i mobilnoj mreži
-<br>
-<br>
-- najveće kompanije su tehnološke (mrežni efekti, disruptivne tehnologije)
-<br>
-<br>
-- digitalizacija podataka
-<br>
-<br>
-- ICT infrastruktura
-<br>
-<br>
-- računalni kapaciteti
-<br>
-<br>
-- automatizacija
-
----
-layout: true
-# Elementi
----
-<br>
-<br>
-- mrežna ekonomija
-<br>
-<br>
-- platformska ekonomija
-<br>
-<br>
-- informacijska ekonomija
-<br>
-<br>
-- podatkovna ekonomja
-<br>
-<br>
-- virtualna ekonomija
-<br>
-<br>
-- ekonomija pažnje (attention economy)
-<br>
-<br>
-- *sharing* ekonomija
-
----
-layout: true
-# Tvrtke
----
-<br>
-<br>
-- content provideri (YouTube, Netflix)
-<br>
-<br> (Fb, Linkedin, Twitter)
-<br>
-<br>
-- proizvođači hardware/software (Apple, Microsoft)
-<br>
-<br>
-- mrežni operatori
-<br>
-<br>
-- elektronska plaćanja (PayPal, Bitcoin)
-<br>
-<br>
-- e-commerce (eBay, Amazon)
-<br>
-<br>
-- sharing (Uber,Airbnb) 
-<br>
-<br>
-- cloud
-
----
-layout: false
-class: middle, inverse
-
-# DIGITALNA EKONOMIKA
----
-layout: true
-# Teorijska osnova
----
-<br>
-<br>
-<br>
-- članak [Digital Economics](https://mitsloan.mit.edu/shared/ods/documents?PublicationDocumentID=5901)
-<br>
-<br>
-- osnova za digitalnu ekonomiju je na troškovnoj strani
-<br>
-<br>
-- manji trošak potrage
-<br>
-<br>
-- manji trošak replikacije
-<br>
-<br>
-- manji trošak transporta
-<br>
-<br>
-- manji trošak praćenja i verifikacije
-
----
-layout: true
-# Mjerenje digitalne ekonomije
----
-<br>
-<br>
-<br>
-- [ne postoji konsenzus](https://hbr.org/2019/11/how-should-we-measure-the-digital-economy) oko definicije
-<br>
-<br>
-- [sektori](https://www.brookings.edu/research/trends-in-the-information-technology-sector/) koji proizvode digitalne tehnologije
-<br>
-<br>
-- poduzeća/poslovi koja koriste digitalne tehnologije (Uber, Airbnb)
-<br>
-<br>
-- inicijativa za netransparentnost
-
----
-layout: true
-# Digitalno društvo 
----
-<br>
-<br>
-<br>
-- velilki podatci i otkrivene preferencije
-<br>
-<br>
-- kompanije više znaju o društvu nego znanost
-<br>
-<br>
-- distribucija moći u društvu
-<br>
-<br>
-- algoritamsko društvo
-<br>
-<br>
-- utjecaj na pojedinca
+- javne politike transfera tehnologije
 
 
 ---
 layout: false
 class: middle, inverse
 
-# ICT
+# KANALI TEHNOLOŠKOG TRANSFERA
 ---
 layout: true
-# Povijesni razvoj
+# Trgovina
 ---
 <br>
 <br>
-- razvoj telekomunikacija od 1860-ih
+<br>
+- [tehnološki transfer kroz uvoz](https://www.nber.org/system/files/working_papers/w13086/w13086.pdf)
 <br>
 <br>
-- razvoj informacijske tehnologije od 1970-ih
+- [Exports and Productivity](https://www.econstor.eu/bitstream/10419/19291/1/319.pdf)
 <br>
 <br>
-- ujedinjenje u ICT sa nastankom interneta 1993. godine
+- [Do exports generate higher productivity?](https://www.sciencedirect.com/science/article/abs/pii/S0022199607000529)
 <br>
 <br>
-- mrežne tehnologije i pametni uređaji oko 2010. godine
+- [Trade agreements and international technology transfer](https://link.springer.com/article/10.1007/s10290-021-00420-7)
 <br>
 <br>
-- infrastruktura za obradu podataka 
+- [irms, trade, and productivity](https://www.theigc.org/wp-content/uploads/2019/12/IGC-Firms-evidence-paper-December-2019.pdf)
 <br>
 <br>
-- 5G
-
+- 
 
 ---
 layout: true
-# Tehnološki razvoj 
+# Strana ulaganja
 ---
 <br>
 <br>
-- razvoj telekomunikacija puno sporiji i zahtjevniji 
+<br>
+- [Trade Integration, FDI, and Productivity](https://openknowledge.worldbank.org/handle/10986/23508)
 <br>
 <br>
-- razvoj informacijskih tehnologija ovisi o infrastrukturi
+- [Exports, Foreign Direct Investments and Productivity](https://d-nb.info/1016509650/34)
 <br>
 <br>
-- **internet stvari (IoT)**
+- [FDI and proDuctIvIty convergence In central and eastern europe](https://www.ecb.europa.eu/pub/pdf/scpwps/ecbwp992.pdf)
 <br>
 <br>
-- potrošački
-<br>
-<br>
-- komercjalni
-<br>
-<br>
-- industrijski
-<br>
-<br>
-- infrastrukturni
-<br>
-<br>
-- vojni
+- [Institutional Quality, FDI, and Productivity: A Theoretical Analysis ](https://www.mdpi.com/2071-1050/12/17/7057)
 
+---
+layout: true
+# Ostali kanali 
+---
+<br>
+<br>
+<br>
+- [Technology and Modes of Technology Transfer](https://discovery.ucl.ac.uk/id/eprint/1346432/3/TT%20Ch2%20Modes.pdf)
+<br>
+<br>
+- [TECHNOLOGY TRANSFER - MODELS AND MECHANISMS](https://iaeme.com/MasterAdmin/Journal_uploads/IJMET/VOLUME_9_ISSUE_6/IJMET_09_06_109.pdf)
+<br>
+<br>
+- [Trade and Foreign Direct Investment as Channels of Low-Carbon Technology Transfer](https://elibrary.worldbank.org/doi/abs/10.1596/978-1-4648-1500-3_ch2)
+<br>
+<br>
+- [Technology Transfer and East-West Relations](https://www.routledge.com/Technology-Transfer-and-East-West-Relations/Schaffer/p/book/9780815360575)
+<br>
+<br>
+- [Which International Technology Transfer Channels Are Effective in Raising Firm Productivity?](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.445.1342&rep=rep1&type=pdf)
+
+---
+layout: true
+# Apsorpcijski kapaciteti 
+---
+<br>
+<br>
+<br
+- [Understanding Absorptive Capacities in an Innovation Systems Context](http://webdoc.sub.gwdg.de/ebook/serien/lm/DRUIDwp/04-02.pdf)
+<br>
+<br>
+- [The capacity to innovate: a meta-analysis of absorptive capacity](https://www.tandfonline.com/doi/full/10.1080/14479338.2018.1428105)
+<br>
+<br>
+- [R&D Intensity, Technology Transfer and Absorptive Capacity](https://www.monash.edu/__data/assets/pdf_file/0004/925483/r-and-d_intensity,_technology_transfer_and_absorptive_capacity.pdf)
+<br>
+<br>
+- [New Perspectives in Technology Transfer](https://www.springerprofessional.de/en/new-perspectives-in-technology-transfer/18838406)
+<br>
+<br>
+- [R&D and Absorptive Capacity: Theory and Empirical Evidence](http://www.princeton.edu/~reddings/pubpapers/ScanJournal2003.pdf)
 
 ---
 layout: false
 class: middle, inverse
 
-# DIGITALIZACIJA
+# EMPIRIJSKE ČINJENICE
 ---
+
 layout: true
 # SVIJET
 ---
 
 <br>
 <br>
-- [The Global Digital Economy](https://hbr.org/insight-center/the-global-digital-economy)
+- [Innovation and Technology Transfer](https://e3g.org/wp-content/uploads/E3G_Innovation_and_Technology_Transfer_Full_Report.pdf)
 <br>
 <br>
-- [Svjetska Banka](https://blogs.worldbank.org/tags/digital-economy)
+- [Encouraging International Technology Transfer](https://www.files.ethz.ch/isn/111411/2010_01_encouraging-international-technology-transfer.pdf)
 <br>
 <br>
-- [globalna digitalna podjela](https://www.tandfonline.com/doi/full/10.1080/19186444.2020.1871257)
+- [Tehnološki transfer nakon COVID-19](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3771482)
 <br>
 <br>
-- [nove mjere digitalne ekonomije](https://www.forbes.com/sites/paulxmccarthy/2021/11/16/new-measures-for-the-digital-economy/?sh=4ff534fe7453)
+- [International Technology Transfer measures](https://www.oecd-ilibrary.org/docserver/ada51ec0-en.pdf?expires=1639398653&id=id&accname=guest&checksum=2F2FCF841094921CF063282A817B09C7)
 <br>
 <br>
-- [Digital Economy Compass 2021 ](https://www.statista.com/study/105653/digital-economy-compass/)
+- [OECD Science, Technology and Innovation Outlook 2021](https://bildungsklick.de/fileadmin/user_upload/www.bildungsklick.de/PDFs/Studie_OECD.pdf)
+<br>
+<br>
+- [Technology and Innovation Report 2021](https://unctad.org/system/files/official-document/tir2020_en.pdf)
 
 ---
 layout: true
@@ -474,35 +357,32 @@ layout: true
 ---
 <br>
 <br>
-- [Digital Economy and Society Index 2021](https://ec.europa.eu/commission/presscorner/detail/en/ip_21_5481)
+- [The European Union and the Technology Shift](https://link.springer.com/book/10.1007/978-3-030-63672-2)
 <br>
 <br>
-- [pregled po zemljama](https://www.researchgate.net/publication/330214500_Digital_economy_in_Europe_Evaluation_of_countries%27_performances) 
+- [Science, technology and innovation in Europe](https://ec.europa.eu/eurostat/documents/3930297/5969406/KS-GN-13-001-EN.PDF) 
 <br>
 <br>
-- [središnja i istočna Europa](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/digital-challengers-in-the-next-normal-in-central-and-eastern-europe)
-<br>
-<br>
-- [EU Policy Blog](https://blogs.microsoft.com/eupolicy/category/digital-economy/)
-<br>
-<br>
-- [East Central Europe needs a new growth model](https://wiiw.ac.at/east-central-europe-needs-a-new-growth-model-n-532.html)
+- [Europe’s Capacity to Act in the Global Tech Race](https://dgap.org/en/research/publications/europes-capacity-act-global-tech-race)
+
 
 ---
 layout: true
-# HRVATSKA
+# Hrvatska
 ---
 <br>
 <br>
-- mjerenje [digitalne ekonomije u RH](https://www.researchgate.net/publication/340979313_DEFINING_AND_MEASURING_THE_DIGITAL_ECONOMY_IN_CROATIA) 
+- [uloga poduzetništva u transferu tehnologije ](Socialism to Capitalism: Technology Transfer and Entrepreneurship in the Republic of Croatia) 
 <br>
 <br>
-- [ekonomska analiza sektora profesionalnih i poslovnih usluga u RH](https://docplayer.net/39846874-Ekonomska-analiza-sektora-profesionalnih-i-poslovnih-usluga-arhivanalitika-za-ministarstvo-gospodarstva-republike-hrvatske.html)
+- [transfer tehnolgije u razvoju industrije](https://www.researchgate.net/publication/281700490_The_Influence_of_Technology_Transfers_on_the_Development_of_Innovations_in_the_Process_Industry_of_Croatia_Istrian_County_Case)
 <br>
 <br>
-- [digitalna ekonomija u Hrvatskoj](http://croecon.contentio.biz/post/digitalna-ekonomija-u-hrvatskoj/)
+- [pristupanje EU i transfer tehnologije](https://d-nb.info/1185819061/34)
+<br>
+<br>
+- [FDI i transfer tehnologije](https://hrcak.srce.hr/130849)
 
-- digitalna ekonomija na [Netokraciji](https://www.netokracija.com/tag/digitalna-ekonomija)
 ---
 layout: false
 class: middle, inverse
@@ -510,30 +390,27 @@ class: middle, inverse
 # RESURSI
 ---
 layout: true
-# Knjige, dokumentarci i ostalo
+# Knjige i članci
 ---
 <br>
 <br>
 <br>
-
-- [Ten Arguments for Deleting Your Social Media Accounts Right Now](https://www.amazon.com/Arguments-Deleting-Social-Media-Accounts/dp/1250239087/ref=asc_df_1250239087/?tag=hyprod-20&linkCode=df0&hvadid=380083827000&hvpos=&hvnetw=g&hvrand=608489697268562107&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1016367&hvtargid=pla-638091742790&psc=1&tag=&ref=&adgrpid=77281545773&hvpone=&hvptwo=&hvadid=380083827000&hvpos=&hvnetw=g&hvrand=608489697268562107&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1016367&hvtargid=pla-638091742790)
+- [Technology and Society](https://learninglink.oup.com/access/quanhaase3e)
 <br>
 <br>
-- [Who Owns the Future?](https://www.thriftbooks.com/w/who-owns-the-future_jaron-lanier/3068184/item/6786700/?gclid=Cj0KCQiAqbyNBhC2ARIsALDwAsCoWX4lxQwLuAX24JZiBPAx4pJ_JZw-8UOpGoktVMFptwfWqvdfUxgaAtrBEALw_wcB#idiq=6786700&edition=8048822)
+- [University Technology Transfer](https://www.routledge.com/University-Technology-Transfer-The-globalization-of-academic-innovation/Breznitz-Etzkowitz/p/book/9780367868741)
 <br>
 <br>
-- [Sociological Theory in the Digital Age ](https://www.routledge.com/Sociological-Theory-in-the-Digital-Age/Ignatow/p/book/9780367263478)
+- [Technology Transfer in a Global Economy](https://link.springer.com/book/10.1007/978-1-4614-6102-9)
 <br>
 <br>
-- [The social Dilemma](https://www.thesocialdilemma.com/)
+- [Innovation and Technology Transfer across Countries](https://wiiw.ac.at/innovation-and-technology-transfer-across-countries-dlp-2639.pdf)
 <br>
 <br>
-- [The Creepy Line](https://www.imdb.com/title/tt8896670/)
+- [Methodological and Technological Issues in Technology Transfer](http://documentacion.ideam.gov.co/openbiblio/bvirtual/005133/ipcc/tectran/IPCC_SRTT.pdf)
 <br>
 <br>
-- [Learning Social Media Analytics](https://lusiki.github.io/Learning-Social-Media-Analytics/)
-
-
+- [hrvatski radovi](https://hrcak.srce.hr/pretraga?q=transfer+tehnologije)
 
 ---
 
@@ -541,7 +418,7 @@ layout:false
 class: middle, inverse
 # Hvala na pozornosti! 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
-(Sljedeće predavanje: Transfer tehnologije)
+(Zadnje predavanje!)
 
 
 
